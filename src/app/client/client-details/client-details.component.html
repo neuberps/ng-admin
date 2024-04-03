@@ -1,0 +1,26 @@
+<h2>Informações dos Clientes</h2>
+
+<hr />
+<div *ngIf="client">
+  <div>
+    <label><b>ID: </b></label> {{client.id}}
+  </div>
+  <div>
+    <label><b>Nome: </b></label> {{client.name}}
+  </div>
+  <div>
+    <label><b>E-mail: </b></label> {{client.email}}
+  </div>
+  <div>
+    <label><b>Telefone: </b></label> {{client.cel}}
+  </div>
+  <div>
+    <label><b>CPF: </b></label> {{client.cpf}}
+  </div>
+  <div>
+    <label><b>Registro de Usuario: </b></label> {{client.registryUser}}
+  </div>
+</div>
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Voltar para a lista de clientes</button><br>

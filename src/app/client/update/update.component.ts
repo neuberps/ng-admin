@@ -13,12 +13,13 @@ export class UpdateComponent implements OnInit {
   id: number;
   client: ClientComponent;
 
-  constructor(private route: ActivatedRoute,private router: Router,
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
     private clientService: ClientService) { }
 
   ngOnInit() {
     this.client = new ClientComponent();
-
     this.id = this.route.snapshot.params['id'];
 
     this.clientService.getClient(this.id)
@@ -42,7 +43,7 @@ export class UpdateComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/client']);
+    this.router.navigate(['/clients']);
   }
 }
 

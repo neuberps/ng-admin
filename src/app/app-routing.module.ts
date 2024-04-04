@@ -1,7 +1,7 @@
+import { FormComponent } from './client/form/form.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ListComponent } from './client/list/list.component';
-import { CreateComponent } from './client/create/create.component';
 import { ClientDetailsComponent } from './client/client-details/client-details.component';
 import { UpdateComponent } from './client/update/update.component';
 
@@ -15,7 +15,7 @@ const routes: Routes = [
     component: ListComponent
   },{
     path: 'add',
-    component: CreateComponent
+    component: FormComponent
   },{
     path: 'update/:id',
     component: UpdateComponent

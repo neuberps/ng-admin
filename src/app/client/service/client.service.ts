@@ -12,7 +12,7 @@ export class ClientService {
   constructor(private httpClient: HttpClient) { }
 
   getClient(id: number): Observable<any> {
-    return this.httpClient.get(`${this.apiUrl}/${id}`);
+    return this.httpClient.get(`${this.apiUrl}/getId/${id}`);
   }
 
   createClient(client: Object): Observable<Object> {

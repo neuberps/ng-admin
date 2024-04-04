@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './client/form/form.component';
 import { ListComponent } from './client/list/list.component';
 import { ClientComponent } from './client/client/client.component';
-import { CreateComponent } from './client/create/create.component';
 import { ClientDetailsComponent } from './client/client-details/client-details.component';
 import { UpdateComponent } from './client/update/update.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,7 +16,6 @@ import { HttpClientModule } from '@angular/common/http';
     FormComponent,
     ListComponent,
     ClientComponent,
-    CreateComponent,
     ClientDetailsComponent,
     UpdateComponent
   ],

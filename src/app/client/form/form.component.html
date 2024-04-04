@@ -3,30 +3,30 @@
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Nome: </label>
-      <input type="text" class="form-control" id="name" required [ngModel]="client.name" name="name">
+      <input type="text" class="form-control" id="name" required [(ngModel)]="client.name" name="name">
     </div>
 
     <div class="form-group">
-      <label for="name">E-mail:</label>
-      <input type="text" class="form-control" id="email" required [ngModel]="client.email" name="email">
+      <label for="email">E-mail:</label>
+      <input type="text" class="form-control" id="email" required [(ngModel)]="client.email" name="email">
     </div>
 
     <div class="form-group">
-      <label for="name">Telefone: </label>
-      <input type="text" class="form-control" id="cel" required [ngModel]="client.cel" name="cel">
+      <label for="cel">Telefone: </label>
+      <input type="text" class="form-control" id="cel" required [(ngModel)]="client.cel" name="cel">
     </div>
 
     <div class="form-group">
-      <label for="name">CPF: </label>
-      <input type="text" class="form-control" id="cpf" required [ngModel]="client.cpf" name="cpf">
+      <label for="cpf">CPF: </label>
+      <input type="text" class="form-control" id="cpf" required [(ngModel)]="client.cpf" name="cpf">
     </div>
 
     <div class="form-group">
-      <label for="name">Registro de Usuário: </label>
-      <input type="text" class="form-control" id="registryUser" required [ngModel]="client.registryUser" name="registryUser">
+      <label for="registryUser">Registro de Usuário: </label>
+      <input type="text" class="form-control" id="registryUser" required [(ngModel)]="client.registryUser" name="registryUser">
     </div>
 
-    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="submit" class="btn btn-success">Cadastrar</button>
   </form>
 </div>
 

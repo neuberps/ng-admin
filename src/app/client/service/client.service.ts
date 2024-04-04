@@ -11,7 +11,7 @@ export class ClientService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getClient(id: number): Observable<any> {
+  getClient(id: string): Observable<any> {
     return this.httpClient.get(`${this.apiUrl}/getId/${id}`);
   }
 
@@ -19,11 +19,11 @@ export class ClientService {
     return this.httpClient.post(`${this.apiUrl}`, client);
   }
 
-  updateClient(id: number, value: any): Observable<Object> {
+  updateClient(id: string, value: any): Observable<Object> {
     return this.httpClient.put(`${this.apiUrl}/${id}`, value);
   }
 
-  deleteClient(id: number): Observable<any> {
+  deleteClient(id: string): Observable<any> {
     return this.httpClient.delete(`${this.apiUrl}/${id}`, { responseType: 'text' });
   }
 

@@ -10,7 +10,7 @@ import { ClientService } from '../service/client.service';
 })
 export class UpdateComponent implements OnInit {
 
-  id: number;
+  id: string;
   client: ClientComponent;
 
   constructor(

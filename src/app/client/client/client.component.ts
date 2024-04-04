@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientComponent implements OnInit {
 
-  id: number;
+  id: string;
   name: string;
   email: string;
   cel: string;

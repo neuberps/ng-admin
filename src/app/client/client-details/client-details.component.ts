@@ -10,7 +10,7 @@ import { ClientComponent } from '../client/client.component';
 })
 export class ClientDetailsComponent implements OnInit {
 
-  id: number;
+  id: string;
   client: ClientComponent;
 
   constructor(

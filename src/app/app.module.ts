@@ -1,6 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormComponent } from './client/form/form.component';
@@ -9,6 +7,8 @@ import { ClientComponent } from './client/client/client.component';
 import { ClientDetailsComponent } from './client/client-details/client-details.component';
 import { UpdateComponent } from './client/update/update.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

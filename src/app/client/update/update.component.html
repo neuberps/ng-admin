@@ -1,0 +1,35 @@
+<div class="container">
+<h3>Atualizar Cliente</h3>
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group mb-2">
+      <label for="name">Nome</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]=" client.name" name="nome">
+    </div>
+
+    <div class="form-group mb-2">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" required [(ngModel)]="client.email" name="email">
+    </div>
+
+    <div class="form-group mb-2">
+      <label for="cel">Celular</label>
+      <input type="text" class="form-control" id="cel" required [(ngModel)]="client.cel" name="cel">
+    </div>
+
+    <div class="form-group mb-2">
+      <label for="cpf">Cpf</label>
+      <input type="text" class="form-control" id="cpf" required [(ngModel)]="client.cpf" name="cpf">
+    </div>
+
+    <div class="form-group">
+      <label for="registryUser">Usuário</label>
+      <input type="text" class="form-control" id="registryUser" required [(ngModel)]="client.registryUser" name="registryUser">
+    </div>
+
+    <br>
+    <button type="submit" class="btn btn-outline-success">Atualizar</button>
+    <button (click)="list()" class="btn btn-outline-danger ms-3">Cancelar</button><br>
+  </form>
+</div>
+</div>

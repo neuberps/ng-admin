@@ -1,0 +1,27 @@
+<div class="container">
+<h3>Detalhes do Cliente</h3>
+<hr/>
+<div *ngIf="client">
+  <div>
+    <label><b>Id: </b></label> {{client.id}}
+  </div>
+  <div>
+    <label><b>Nome: </b></label> {{client.name}}
+  </div>
+  <div>
+    <label><b>Email: </b></label> {{client.email}}
+  </div>
+  <div>
+    <label><b>Celular: </b></label> {{client.cel}}
+  </div>
+  <div>
+    <label><b>Cpf: </b></label> {{client.cpf}}
+  </div>
+  <div>
+    <label><b>Usuário: </b></label> {{client.registryUser}}
+  </div>
+</div>
+
+<br>
+<button (click)="list()" class="btn btn-outline-success">Voltar a lista de Clientes</button><br>
+</div>

@@ -1,0 +1,10 @@
+.btn-list {
+  color: white;
+  background-color: #243B3B;
+  display: inline-block; /* Transforma o botão em um bloco para aplicar margin */
+  margin: 0 auto; /* Margem automática horizontal para centralizar */
+  width: 150px; /* Defina a largura desejada para o botão */
+  text-align: center; /* Centraliza o texto dentro do botão */
+  cursor: pointer;
+  animation: pulse 2s infinite;
+}

@@ -1,0 +1,24 @@
+<h2>Client Details</h2>
+
+<hr/>
+<div *ngIf="client">
+  <div>
+    <label><b>Nome: </b></label> {{client.name}}
+  </div>
+  <div>
+    <label><b>Email: </b></label> {{client.email}}
+  </div>
+  <div>
+    <label><b>Cel: </b></label> {{client.cel}}
+  </div>
+  <div>
+    <label><b>CPF: </b></label> {{client.cpf}}
+  </div>
+  <div>
+    <label><b>RegistryUser: </b></label> {{client.registryUser}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-list">Voltar</button><br>

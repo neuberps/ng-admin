@@ -1,0 +1,23 @@
+.container {
+  justify-content: center;
+  font-family: "Public Sans", sans-serif;
+  font-weight: bold;
+  color:#243B3B;
+  text-align: left;
+  margin-top: 40px;
+  font-size: 18px;
+  margin-bottom: 60px;
+  width: 30%;
+}
+
+.btn-outline-success {
+  color: white;
+  background-color: #243B3B;
+  margin: 0 auto;
+  width: 150px;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+
+}
+
+

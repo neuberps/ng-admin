@@ -1,0 +1,18 @@
+.title-2{
+  text-align: center;
+}
+
+.btn-danger {
+  background-color: brown;
+
+}
+
+.btn-info {
+  background-color: rgb(1, 129, 28);
+  color: white;
+}
+
+.btn-details {
+  background-color: #243B3B;
+  color:white;
+}

@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ClientService } from '../service/client.service';
 import { ClientComponent } from '../client/client.component';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-form',

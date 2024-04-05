@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 
 import { TemplateModule } from './template/template.module';
 import { HomeComponent } from './home/home.component'
-import { ClientModule } from './client/client.module';
-import { ClientService } from './client.service';
+import { ClientModule } from './client/model/client.module';
+import { ClientService } from './client/service/client.service';
 
 @NgModule({
   declarations: [

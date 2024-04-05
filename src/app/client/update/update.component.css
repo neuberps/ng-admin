@@ -1,9 +1,5 @@
-a{
-cursor: pointer;
-text-decoration: none;
-}
-.btn-purple{
-  background-color: blueviolet;
+.div-update{
+  width: 400px;
 }
 
 .div-alert{

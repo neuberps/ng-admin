@@ -12,6 +12,8 @@ import { Clients } from '../model/clients';
 })
 export class ListComponent implements OnInit {
   clients: Observable<Clients[]>;
+  searchValue:string;
+  currentDate:  Date  =  new Date();
   showAlert = false;
   public paginaAtual = 1;
 

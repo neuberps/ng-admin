@@ -5,17 +5,26 @@ import { ClientRoutingModule } from '../client-routing.module';
 import { FormComponent } from '../form/form.component';
 import { FormsModule } from '@angular/forms';
 import { ListComponent } from '../list/list.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { SearchfilterPipe } from 'src/app/searchfilter.pipe';
+
 
 
 @NgModule({
   declarations: [
     FormComponent,
-    ListComponent
+    ListComponent,
+    SearchfilterPipe
+
   ],
   imports: [
     CommonModule,
     ClientRoutingModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule,
+
+
+
   ],
   exports: [
     FormComponent,

@@ -9,19 +9,24 @@ import { TemplateModule } from './template/template.module';
 import { HomeComponent } from './home/home.component'
 import { ClientModule } from './client/model/client.module';
 import { ClientService } from './client/service/client.service';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     TemplateModule,
-    ClientModule, 
- 
+    ClientModule,
+    NgxPaginationModule,
+
+
   ],
   providers: [
     ClientService

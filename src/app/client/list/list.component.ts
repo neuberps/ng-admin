@@ -10,13 +10,18 @@ import { Router } from '@angular/router';
 })
 export class ListComponent implements OnInit {
 
+  totalLength: any;
+  page: number = 1;
+
+  searchValue: any;
+
   clients: Client[] = [];
   selectedClient: Client;
   successMessage: string;
   errorMessage: string;
 
   constructor(
-    private service: ClientService, 
+    private service: ClientService,
     private router: Router) {}
 
   ngOnInit(): void {
@@ -33,9 +38,9 @@ export class ListComponent implements OnInit {
     this.selectedClient = client;
   }
 
-  deleteClient() {    
+  deleteClient() {
     this.service.deleteId(this.selectedClient)
-      .subscribe( 
+      .subscribe(
           response => {
             this.successMessage = 'Cliente excluído com sucesso!';
             // Recarregar a página
@@ -46,5 +51,5 @@ export class ListComponent implements OnInit {
             this.errorMessage = 'Erro ao excluir cliente: ' + error.message;
           }
       );
-}
+  }
 }

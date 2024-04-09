@@ -32,6 +32,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let client of clients | searchfilter:searchValue |  paginate: { itemsPerPage: 5, currentPage: page, totalItems: totalLength } ">
+                      <!-- <tr *ngFor="let client of clients |  paginate: { itemsPerPage: 5, currentPage: page, totalItems: totalLength } "> -->
                         <td>{{ client.name }}</td>
                         <td>{{ client.email }}</td>
                         <td>{{ client.cel }}</td>

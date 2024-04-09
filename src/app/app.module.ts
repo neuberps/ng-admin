@@ -9,14 +9,15 @@ import { TemplateModule } from './template/template.module';
 import { HomeComponent } from './home/home.component'
 import { ClientModule } from './client/model/client.module';
 import { ClientService } from './client/service/client.service';
+import { CategoryService } from './category/service/category.service';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CategoryModule } from './category/model/category.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -25,11 +26,11 @@ import { NgxPaginationModule } from 'ngx-pagination';
     TemplateModule,
     ClientModule,
     NgxPaginationModule,
-
-
+    CategoryModule
   ],
   providers: [
-    ClientService
+    ClientService,
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })

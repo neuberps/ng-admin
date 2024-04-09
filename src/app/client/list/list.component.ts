@@ -43,7 +43,6 @@ export class ListComponent implements OnInit {
       .subscribe(
           response => {
             this.successMessage = 'Cliente excluído com sucesso!';
-            // Recarregar a página
             window.location.reload();
           },
           error => {

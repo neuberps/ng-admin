@@ -25,9 +25,9 @@ export class ClientService {
 
   getById( id: string ) : Observable<Client> {
     return this.http.get<any> (`http://localhost:9001/api/clients/getId/${id}`);
-  } 
+  }
 
   deleteId( client : Client ) : Observable<any> {
     return this.http.delete<any>(`http://localhost:9001/api/clients/${client.id}`);
-  }  
+  }
 }

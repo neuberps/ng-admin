@@ -1,19 +1,24 @@
-<h1 class="mt-4">Clientes</h1>
-<ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item active">Listar Cliente</li>
-</ol>
+<div class="container">
+  <h1 class="mt-4">Clientes</h1>
+  <ol class="breadcrumb mb-4">
+      <li class="breadcrumb-item active">Listar Cliente</li>
+  </ol>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-md-2">
             <button class="btn btn-warning" (click)="createClient()">
                 <i class="fa fa-plus"></i> Cadastrar
-    
+
             </button>
         </div>
     </div>
     <br/>
     <div class="row">
         <div class="col-md-12">
+          <form class="d-flex mb-5" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" [(ngModel)]="searchValue" name="search">
+          </form>
             <table class="table table-sm table-condensed table-hover">
                 <thead>
                     <tr>
@@ -26,19 +31,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let client of clients">
+                    <tr *ngFor="let client of clients | searchfilter:searchValue |  paginate: { itemsPerPage: 5, currentPage: page, totalItems: totalLength } ">
                         <td>{{ client.name }}</td>
                         <td>{{ client.email }}</td>
                         <td>{{ client.cel }}</td>
                         <td>{{ client.cpf }}</td>
                         <td>{{ client.registryUser }}</td>
                         <td>
-                            <button class=" btn btn-primary" 
+                            <button class=" btn btn-primary"
                                     routerLink="/form/{{ client.id }}">
                                 <i class="fa fa-edit"></i>
                             </button>
                             <button class="ml-1 btn btn-danger" (click)="confirmDeletion(client)"
-                                    data-toggle="modal" data-target="#modalDel">                                    
+                                    data-toggle="modal" data-target="#modalDel">
                                 <i class="fa fa-trash"></i>
                             </button>
                         </td>
@@ -51,19 +56,23 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                   <h4>Confirmação</h4> 
+                   <h4>Confirmação</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Confirma exclusão do(a) Cliente?</p>                
+                    <p>Confirma exclusão do(a) Cliente?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" data-dismiss="modal"
-                class="btn btn-success" (click)="deleteClient()" >Confirmar</button>  
+                class="btn btn-success" (click)="deleteClient()" >Confirmar</button>
                 <div class="modal-footer">
                     <button type="button" data-dismiss="modal"
-                class="btn btn-danger">Cancelar</button>               
+                class="btn btn-danger">Cancelar</button>
                 </div>
             </div>
         </div>
     </div>
-</div>
+  </div>
+  <br>
+  <div class="pagination justify-content-end">
+    <pagination-controls (pageChange)="page=$event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
+  </div>

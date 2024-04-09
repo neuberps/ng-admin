@@ -1,7 +1,9 @@
-<h1 class="mt-4">Clientes</h1>
-<ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item active">{{ client.id ? 'Editar Cliente' : 'Cadastrar Cliente'}}</li>
-</ol>
+<div class="container">
+  <h1 class="mt-4">Clientes</h1>
+  <ol class="breadcrumb mb-4">
+      <li class="breadcrumb-item active">{{ client.id ? 'Editar Cliente' : 'Cadastrar Cliente'}}</li>
+  </ol>
+</div>
 <div class="container">
     <form #clientform="ngForm" (ngSubmit)="onSubmit()">
         <div class="row">
@@ -24,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">    
+        <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
                     <label>Nome: *</label>

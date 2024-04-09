@@ -10,13 +10,18 @@ import { HomeComponent } from './home/home.component'
 import { ClientModule } from './client/model/client.module';
 import { ClientService } from './client/service/client.service';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { UserModule } from './user/model/user.module';
+import { FormComponent } from './user/form/form.component';
+import { ListComponent } from './user/list/list.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-
+    FormComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -24,9 +29,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AppRoutingModule,
     TemplateModule,
     ClientModule,
-    NgxPaginationModule,
-
-
+    UserModule,
+    NgxPaginationModule
   ],
   providers: [
     ClientService

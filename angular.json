@@ -24,9 +24,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -119,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "crud-service"
+    }
+  },
+  "defaultProject": "crud-service",
+  "cli": {
+    "analytics": "6dac903a-edee-4e75-9e23-62b9082f0878"
+  }
 }

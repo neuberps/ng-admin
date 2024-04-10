@@ -73,7 +73,7 @@
           <i class="fa fa-sync-alt"></i> Atualizar
         </button>
 
-        <button type="button" class="btn btn-secondary ml-1" (click)="returnList()">
+        <button type="button" class="btn btn-secondary ml-1" routerLink="/client-list">
           <i class="fa fa-arrow-alt-circle-left"></i> Voltar
         </button>
         <!-- Button open modal -->
@@ -97,7 +97,7 @@
         </div>
         <div class="modal-footer">
 
-          <button type="button" data-dismiss="modal" class="btn btn-success" (click)="deleteClient()" routerLink="/list">Confirmar</button>
+          <button type="button" data-dismiss="modal" class="btn btn-success" (click)="deleteClient()" routerLink="/client-list">Confirmar</button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa fa-arrow-alt-circle-left"></i> Voltar</button>
 
         </div>

@@ -23,7 +23,7 @@
       <table class="table table-sm table-condensed table-hover">
         <thead>
           <tr>
-            <th>ID</th>
+            <!-- <th>ID</th> -->
             <th>Nome</th>
             <th>Email</th>
             <th>Status</th>
@@ -31,27 +31,28 @@
             <th>Preço</th>
             <th>Tempo de Execução</th>
             <th>Prazo</th>
+            <th>Registro</th>
           </tr>
         </thead>
 
         <tbody>
           <tr
-            *ngFor="let service of services | searchfilter:searchValue |  paginate: { itemsPerPage: 5, currentPage: page, totalItems: totalLength } ">
-            <td>{{ service.serviceID }}</td>
-            <td>{{ service.serviceName }}</td>
-            <td>{{ service.serviceEmail }}</td>
-            <td>{{ service.serviceStatus }}</td>
-            <td>{{ service.serviceDescription }}</td>
-            <td>{{ service.servicePrice }}</td>
-            <td>{{ service.serviceRuntime }}</td>
-            <td>{{ service.serviceTerm }}</td>
+            *ngFor="let service of services | servicessearchfilter:searchValue |  paginate: { itemsPerPage: 5, currentPage: page, totalItems: totalLength } ">
+            <!-- <td>{{ service.id }}</td> -->
+            <td>{{ service.name}}</td>
+            <td>{{ service.email }}</td>
+            <td>{{ service.status }}</td>
+            <td>{{ service.description }}</td>
+            <td>{{ service.price }}</td>
+            <td>{{ service.runtime }}</td>
+            <td>{{ service.term }}</td>
+            <td>{{ service.registryUser }}</td>
             <td>
-              <button class=" btn btn-primary" routerLink="/form/{{ service.serviceID }}">
+              <button class=" btn btn-primary" id="button" routerLink="/service-form/{{ service.id }}">
                 <i class="fa fa-edit"></i>
               </button>
 
-              <button class="ml-1 btn btn-danger" (click)="confirmDeletion(service)" data-toggle="modal"
-                data-target="#modalDel">
+              <button class="ml-1 btn btn-danger" id="button" (click)="confirmDeletion(service)" data-bs-toggle="modal" data-bs-target="#modalDel">
                 <i class="fa fa-trash"></i>
               </button>
             </td>
@@ -73,9 +74,9 @@
         </div>
 
         <div class="modal-footer">
-          <button type="button" data-dismiss="modal" class="btn btn-success" (click)="deleteService()">Confirmar</button>
+          <button type="button" data-bs-dismiss="modal" class="btn btn-success" (click)="deleteService()">Confirmar</button>
           <div class="modal-footer">
-            <button type="button" data-dismiss="modal" class="btn btn-danger">Cancelar</button>
+            <button type="button" data-bs-dismiss="modal" class="btn btn-danger">Cancelar</button>
           </div>
         </div>
       </div>

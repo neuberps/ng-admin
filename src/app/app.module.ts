@@ -11,8 +11,8 @@ import { NavbarComponent } from './template/navbar/navbar.component';
 import { SidebarComponent } from './template/sidebar/sidebar.component';;
 import { ServiceFormComponent } from './crud-service/service-form/service-form.component';
 import { ServiceListComponent } from './crud-service/service-list/service-list.component';
-import { SearchfilterPipe } from './crud-service/services/searchfilter.pipe';
 import { ServiceService } from './crud-service/services/service.service';
+import { ServicessearchfilterPipe } from './crud-service/services/servicessearchfilter.pipe';
 
 
 @NgModule({
@@ -23,7 +23,7 @@ import { ServiceService } from './crud-service/services/service.service';
     SidebarComponent,
     ServiceFormComponent,
     ServiceListComponent,
-    SearchfilterPipe,
+    ServicessearchfilterPipe,
 
   ],
   imports: [
@@ -33,7 +33,7 @@ import { ServiceService } from './crud-service/services/service.service';
     HttpClientModule,
     NgxPaginationModule
   ],
-  providers: [ ServiceService],
+  providers: [ServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

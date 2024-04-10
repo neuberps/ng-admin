@@ -1,10 +1,11 @@
 export class Service {
-  serviceID: string;
-  serviceName: string;
-  serviceEmail: string;
-  serviceStatus: string;
-  serviceDescription: string;
-  servicePrice: string;
-  serviceRuntime: string;
-  serviceTerm: string;
+  id: string;
+  name: string;
+  email: string;
+  status: boolean;
+  description: string;
+  price: number;
+  runtime: number;
+  term: number;
+  registryUser: string;
 }

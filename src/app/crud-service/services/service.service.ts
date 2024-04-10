@@ -8,20 +8,20 @@ import { Service } from '../model/service';
 })
 export class ServiceService {
 
-  private readonly API_Spring = "http://localhost:9005/api/services";
+  private readonly API_Spring = `http://localhost:9005/api/services`;
 
   constructor(private httpClient: HttpClient) { }
 
   create(service: Service): Observable<Service>{
-    return this.httpClient.post<Service>("${this.API_Spring}", service);
+    return this.httpClient.post<Service>(`${this.API_Spring}`, service);
   }
 
   update(service: Service): Observable<any>{
-    return this.httpClient.put<Service>(`${this.API_Spring}/${service.serviceID}`, service);
+    return this.httpClient.put<Service>(`${this.API_Spring}/${service.id}`, service);
   }
 
   findAll(): Observable<Service[]>{
-    return this.httpClient.get<Service[]>("${this.API_Spring}");
+    return this.httpClient.get<Service[]>(`${this.API_Spring}`);
   }
 
   findById(id: String): Observable<Service>{
@@ -33,6 +33,6 @@ export class ServiceService {
   }
 
   delete(service: Service): Observable<any>{
-    return this.httpClient.delete<any>(`${this.API_Spring}/${service.serviceID}`);
+    return this.httpClient.delete<any>(`${this.API_Spring}/${service.id}`);
   }
 }

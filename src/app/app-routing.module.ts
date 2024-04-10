@@ -10,15 +10,15 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'form',
+    path: 'service-form',
     component: ServiceFormComponent
   },
   {
-    path: 'form:id',
+    path: 'service-form/:id',
     component: ServiceFormComponent
   },
   {
-    path: 'list',
+    path: 'service-list',
     component: ServiceListComponent
   }
 ];

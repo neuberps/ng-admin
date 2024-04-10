@@ -38,7 +38,7 @@ export class ServiceFormComponent implements OnInit {
   }
 
   returnList(){
-    this.router.navigate(["/list"]);
+    this.router.navigate(["/service-list"]);
   }
 
   onSubmit(){

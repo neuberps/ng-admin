@@ -28,7 +28,7 @@ export class ServiceListComponent implements OnInit {
   }
 
   createService(){
-    this.router.navigate(['/form'])
+    this.router.navigate(['/service-form'])
   }
 
   confirmDeletion(service: Service){

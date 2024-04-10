@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-2">
-            <button class="btn btn-warning" (click)="createClient()">
+            <button class="btn btn-primary" (click)="createClient()">
                 <i class="fa fa-plus"></i> Cadastrar
 
             </button>
@@ -42,37 +42,16 @@
                                     routerLink="/form/{{ client.id }}">
                                 <i class="fa fa-edit"></i>
                             </button>
-                            <button class="ml-1 btn btn-danger" (click)="confirmDeletion(client)"
-                                    data-toggle="modal" data-target="#modalDel">
-                                <i class="fa fa-trash"></i>
-                            </button>
+
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+      </div>
+      <br>
+    <div class="pagination justify-content-end">
+      <pagination-controls (pageChange)="page=$event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
     </div>
-    <div id="modalDel" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                   <h4>Confirmação</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Confirma exclusão do(a) Cliente?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" data-dismiss="modal"
-                class="btn btn-success" (click)="deleteClient()" >Confirmar</button>
-                <div class="modal-footer">
-                    <button type="button" data-dismiss="modal"
-                class="btn btn-danger">Cancelar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-  </div>
-  <br>
-  <div class="pagination justify-content-end">
-    <pagination-controls (pageChange)="page=$event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
+
   </div>

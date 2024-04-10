@@ -34,22 +34,5 @@ export class ListComponent implements OnInit {
     this.router.navigate(['/form'])
   }
 
-  confirmDeletion(client : Client) {
-    this.selectedClient = client;
-  }
-
-  deleteClient() {
-    this.service.deleteId(this.selectedClient)
-      .subscribe(
-          response => {
-            this.successMessage = 'Cliente excluído com sucesso!';
-            // Recarregar a página
-            window.location.reload();
-          },
-          error => {
-            console.error('Erro ao excluir cliente:', error);
-            this.errorMessage = 'Erro ao excluir cliente: ' + error.message;
-          }
-      );
-  }
+  
 }

@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { Service } from '../model/service';
 
 @Pipe({
   name: 'searchfilter'

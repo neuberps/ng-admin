@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { FormComponent } from './service/form/form.component';
-import { ListComponent } from './service/list/list.component';
-
+import { ServiceFormComponent } from './crud-service/service-form/service-form.component';
+import { ServiceListComponent } from './crud-service/service-list/service-list.component';
 
 const routes: Routes = [
   {
@@ -12,15 +11,15 @@ const routes: Routes = [
   },
   {
     path: 'form',
-    component: FormComponent
+    component: ServiceFormComponent
   },
   {
     path: 'form:id',
-    component: FormComponent
+    component: ServiceFormComponent
   },
   {
     path: 'list',
-    component:ListComponent
+    component: ServiceListComponent
   }
 ];
 

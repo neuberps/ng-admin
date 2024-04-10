@@ -1,12 +1,10 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Service } from '../model/service';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-
 export class ServiceService {
 
   private readonly API_Spring = "http://localhost:9005/api/services";
@@ -36,5 +34,4 @@ export class ServiceService {
   delete(service: Service): Observable<any>{
     return this.httpClient.delete<any>(`${this.API_Spring}/${service.serviceID}`);
   }
-
 }

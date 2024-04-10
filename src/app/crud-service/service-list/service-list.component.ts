@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ServiceService } from '../services/service.service';
 import { Service } from '../model/service';
-import { ServiceService } from '../service/service.service';
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  selector: 'app-service-list',
+  templateUrl: './service-list.component.html',
+  styleUrls: ['./service-list.component.css']
 })
-export class ListComponent implements OnInit {
+export class ServiceListComponent implements OnInit {
 
   totalLength: any;
   page:number = 1;
@@ -19,12 +19,12 @@ export class ListComponent implements OnInit {
   errorMessage: string;
 
   constructor(
-    private service: ServiceService,
+    private serviceService: ServiceService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.service.findAll().subscribe(response => this.services = response);
+    this.serviceService.findAll().subscribe(response => this.services = response);
   }
 
   createService(){
@@ -36,7 +36,7 @@ export class ListComponent implements OnInit {
   }
 
   deleteService(){
-    this.service.delete(this.selectedService).subscribe(response => {
+    this.serviceService.delete(this.selectedService).subscribe(response => {
       this.successMessage = 'Serviço excluído com sucesso!';
       window.location.reload();
     },
@@ -46,4 +46,5 @@ export class ListComponent implements OnInit {
     }
   );
   }
+
 }

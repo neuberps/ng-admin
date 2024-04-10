@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import { Observable } from "rxjs";
-
 import { Service } from '../model/service';
-import { ServiceService } from '../service/service.service';
+import { ServiceService } from '../services/service.service';
 
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  selector: 'app-service-form',
+  templateUrl: './service-form.component.html',
+  styleUrls: ['./service-form.component.css']
 })
-export class FormComponent implements OnInit {
+export class ServiceFormComponent implements OnInit {
+
   service: Service;
   success: boolean = false;
   errors: string[];
@@ -67,4 +67,5 @@ export class FormComponent implements OnInit {
       );
     }
   }
+
 }

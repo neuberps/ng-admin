@@ -4,14 +4,16 @@ import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './template/navbar/navbar.component';
-import { SidebarComponent } from './template/sidebar/sidebar.component';
-import { FormComponent } from './service/form/form.component';
-import { ListComponent } from './service/list/list.component';
-import { ServiceService } from './service/service/service.service';
-import { SearchfilterPipe } from './service/service/searchfilter.pipe';
+import { SidebarComponent } from './template/sidebar/sidebar.component';;
+import { ServiceFormComponent } from './crud-service/service-form/service-form.component';
+import { ServiceListComponent } from './crud-service/service-list/service-list.component';
+import { SearchfilterPipe } from './crud-service/services/searchfilter.pipe';
+import { ServiceService } from './crud-service/services/service.service';
+
 
 @NgModule({
   declarations: [
@@ -19,14 +21,16 @@ import { SearchfilterPipe } from './service/service/searchfilter.pipe';
     HomeComponent,
     NavbarComponent,
     SidebarComponent,
-    FormComponent,
-    ListComponent,
-    SearchfilterPipe
+    ServiceFormComponent,
+    ServiceListComponent,
+    SearchfilterPipe,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     NgxPaginationModule
   ],
   providers: [ ServiceService],

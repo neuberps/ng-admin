@@ -7,22 +7,19 @@ import { AppComponent } from './app.component';
 
 import { TemplateModule } from './template/template.module';
 import { HomeComponent } from './home/home.component'
-import { ClientModule } from './client/model/client.module';
+import { ClientModule } from './client/client.module';
 import { ClientService } from './client/service/client.service';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { UserModule } from './user/model/user.module';
-import { FormComponent } from './user/form/form.component';
-import { ListComponent } from './user/list/list.component';
-
+import { UserModule } from './user/user.module';
+import { UserService } from './user/service/user.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    FormComponent,
-    ListComponent
+    HomeComponent
   ],
+  
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -31,9 +28,11 @@ import { ListComponent } from './user/list/list.component';
     ClientModule,
     UserModule,
     NgxPaginationModule
+
   ],
   providers: [
-    ClientService
+    ClientService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

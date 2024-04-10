@@ -1,5 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Client } from '../client';
+import { Client } from '../model/client';
+
+
 
 @Pipe({
   name: 'searchfilter'
@@ -14,4 +16,5 @@ export class SearchfilterPipe implements PipeTransform {
       return clients.filter(client => client.name.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()));
     }
   }
+
 }

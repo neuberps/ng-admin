@@ -43,7 +43,7 @@
                                 <i class="fa fa-edit"></i>
                             </button>
                             <button class="ml-1 btn btn-danger" (click)="confirmDeletion(client)"
-                                    data-toggle="modal" data-target="#modalDel">
+                                    data-bs-toggle="modal" data-bs-target="#modalDel">
                                 <i class="fa fa-trash"></i>
                             </button>
                         </td>
@@ -62,10 +62,10 @@
                     <p>Confirma exclusão do(a) Cliente?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" data-dismiss="modal"
+                    <button type="button" data-bs-dismiss="modal"
                 class="btn btn-success" (click)="deleteClient()" >Confirmar</button>
                 <div class="modal-footer">
-                    <button type="button" data-dismiss="modal"
+                    <button type="button" data-bs-dismiss="modal"
                 class="btn btn-danger">Cancelar</button>
                 </div>
             </div>

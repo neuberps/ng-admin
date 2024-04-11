@@ -1,0 +1,87 @@
+<div class="container">
+  <h1 class="mt-4">Pagamentos</h1>
+  <ol class="breadcrumb mb-4">
+      <li class="breadcrumb-item active">{{payment.id ? 'Editar Cliente' : 'Cadastrar Cliente'}}</li>
+  </ol>
+</div>
+<div class="container">
+    <form #clientform="ngForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success" role="alert" *ngIf="success == true">
+                    Cliente adicionado/salvo com sucesso!
+                </div>
+                <!-- <div class="alert alert-danger" role="alert" *ngFor="let erro os errors">
+                    {{ erro }}
+                </div> -->
+            </div>
+        </div>
+
+        <div class="row" *ngIf="payment.id">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>ID:</label>
+                    <input type="text" class="form-control"
+                            [ngModel]="payment.id" name="id" disabled="true"/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Id do produto: *</label>
+                    <input type="text" class="form-control"
+                            [(ngModel)]="payment.idProduct" name="idProduct"/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Identificaçaõ do usuario: *</label>
+                    <input type="text" class="form-control"
+                            [(ngModel)]="payment.idUser" name="idUser"/>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Metodo de pagamento: *</label>
+                    <select  class="form-control" [(ngModel)]="payment.paymentMethod" name="value">
+                      <option selected >Selecione metodo de pagamento</option>
+                      <option *ngFor="let method of methods" value="{{method.id}}">{{method.name}}</option>
+                  </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Total:*</label>
+                    <input type="text" class="form-control"
+                            [(ngModel)]="payment.value" name="value"/>
+                </div>
+            </div>
+            <div class="form-group">
+              <label>Status:*</label>
+              <select  class="form-control" [(ngModel)]="payment.status" name="value">
+                <option *ngFor="let state of status" value="{{state.id}}">{{state.name}}</option>
+              </select>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-success" *ngIf="!payment.id">
+                    <i class="fa fa-save"></i> Salvar
+                </button>
+
+                <button type="submit" class="btn btn-primary" *ngIf="payment.id">
+                    <i class="fa fa-sync-alt"></i> Atualizar
+                </button>
+
+                <button type="button" class="btn btn-danger ml-1" (click)="returnList()">
+                    <i class="fa fa-arrow-alt-circle-left"></i> Voltar
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

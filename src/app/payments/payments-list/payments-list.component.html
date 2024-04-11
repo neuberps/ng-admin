@@ -1,0 +1,80 @@
+<div class="container">
+  <h1 class="mt-4">Pagamentos</h1>
+  <ol class="breadcrumb mb-4">
+      <li class="breadcrumb-item active">Listar Pagamentos</li>
+  </ol>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <button class="btn btn-warning" (click)="createPayment()">
+                <i class="fa fa-plus"></i> Incluir
+            </button>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-12">
+          <form class="d-flex mb-5" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" [(ngModel)]="searchValuepayment" name="search">
+          </form>
+            <table class="table table-sm table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>Id product</th>
+                        <th>Id user</th>
+                        <th>Metodo de pagamento</th>
+                        <th>Data da compra</th>
+                        <th>Atulização</th>
+                        <th>Total</th>
+                        <th>Stauts</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let payment of payments| searchfilter:searchValuepayment |  paginate: { itemsPerPage: 5, currentPage: page, totalItems: totalLength } ">
+                        <td>{{ payment.idProduct}}</td>
+                        <td>{{ payment.idUser }}</td>
+                        <td>{{ payment.paymentMethod }}</td>
+                        <td>{{ payment.created | date:'dd/MM/yyyy  HH:mm:ss' }}</td>
+                        <td>{{ payment.updated  | date:'dd/MM/yyyy  HH:mm:ss'}}</td>
+                        <td>R$ {{ payment.value }}</td>
+                        <td>{{ payment.status }}</td>
+                        <td>
+                            <button class=" btn btn-primary"
+                                    routerLink="/payment/form/{{payment.id}}">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                            <button class="ml-1 btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#modalDel" (click)="confirmDeletion(payment)">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="modalDel" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                   <h4>Confirmação</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Confirma exclusão do(a) Cliente?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-bs-dismiss="modal"
+                class="btn btn-success" (click)="deletePayment()">Confirmar</button>
+                <div class="modal-footer">
+                    <button type="button" data-bs-dismiss="modal"
+                class="btn btn-danger">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <br>
+  <div class="pagination justify-content-end">
+    <pagination-controls (pageChange)="page=$event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
+  </div>

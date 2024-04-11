@@ -7,9 +7,12 @@ import { AppComponent } from './app.component';
 
 import { TemplateModule } from './template/template.module';
 import { HomeComponent } from './home/home.component'
-import { ClientModule } from './client/model/client.module';
+
 import { ClientService } from './client/service/client.service';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ClientModule } from './client/client.module';
+import { PaymentsModule } from './payments/payments.module';
+
 
 
 @NgModule({
@@ -24,6 +27,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AppRoutingModule,
     TemplateModule,
     ClientModule,
+    PaymentsModule,
     NgxPaginationModule,
 
 

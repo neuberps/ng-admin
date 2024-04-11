@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Client } from "../client";
+import { Client } from "../model/client";
 import { ClientService } from "../service/client.service";
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import { Observable } from "rxjs";
@@ -31,7 +31,7 @@ export class FormComponent implements OnInit {
     //   this.service
     //       .getById(this.id)
     //       .subscribe( response = > this.client = response)
-    // }    
+    // }
 
 
     let params: Observable<Params> = this.activatedRoute.params;

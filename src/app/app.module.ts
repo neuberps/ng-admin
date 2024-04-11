@@ -5,8 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
-import { ClientRoutingModule } from './client/client-routing.module';
-import { ServiceRountingModule } from './service/service-rounting.module';
+import { ClientModule } from './client/model/client.module';
+import { ServiceRoutingModule } from './service/service-routing.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -14,24 +14,24 @@ import { NavbarComponent } from './template/navbar/navbar.component';
 import { SidebarComponent } from './template/sidebar/sidebar.component';;
 import { ServiceService } from './service/service/service.service';
 import { ClientService } from './client/service/client.service';
+import { ServiceModule } from './service/service.module';
+import { TemplateModule } from './template/template.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent,
-    SidebarComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    RouterModule,
     HttpClientModule,
-    ClientRoutingModule,
-    ServiceRountingModule,
+    AppRoutingModule,
+    TemplateModule,
+    ClientModule,
+    ServiceModule,
     NgxPaginationModule
   ],
+  
   providers: [ServiceService, ClientService],
   bootstrap: [AppComponent]
 })

@@ -2,17 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ClientRoutingModule } from '../client-routing.module';
-import { ClientFormComponent } from '../client-form/client-form.component';
+
 import { FormsModule } from '@angular/forms';
 import { ClientListComponent } from '../client-list/client-list.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SearchfilterPipe } from 'src/app/client/service/searchfilter.pipe';
+import { ClientFormComponent } from '../client-form/client-form.component';
 
 
 
 @NgModule({
   declarations: [
-    // ClientFormComponent,
+    ClientFormComponent,
     ClientListComponent,
     SearchfilterPipe
 
@@ -25,7 +26,7 @@ import { SearchfilterPipe } from 'src/app/client/service/searchfilter.pipe';
 
   ],
   exports: [
-    // ClientFormComponent,
+    ClientFormComponent,
     ClientListComponent
   ]
 })

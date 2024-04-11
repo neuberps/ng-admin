@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { Client } from "../client";
 import { ClientService } from "../service/client.service";
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import { Observable } from "rxjs";
+import { Client } from "../model/client";
 
 @Component({
   selector: "app-form",

@@ -16,6 +16,11 @@ export class UserFormComponent implements OnInit {
   errors: string[];
   id: string;
 
+  users: User[] = [];
+  selectedUser: User;
+  successMessage: string;
+  errorMessage: string;
+
   constructor(
     private service: UserService,
     private router: Router,
@@ -65,5 +70,24 @@ export class UserFormComponent implements OnInit {
         }
       );
     }
+  }
+
+   confirmDeletion(user : User) {
+    this.selectedUser= user;
+  }
+
+  deleteUser() {
+    this.service.deleteId(this.selectedUser)
+      .subscribe(
+          response => {
+            this.successMessage = 'Usuário excluído com sucesso!';
+            // Recarregar a página
+            window.location.reload();
+          },
+          error => {
+            console.error('Erro ao excluir usuário:', error);
+            this.errorMessage = 'Erro ao excluir usuário: ' + error.message;
+          }
+      );
   }
 }

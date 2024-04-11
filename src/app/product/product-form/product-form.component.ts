@@ -16,6 +16,12 @@ export class ProductFormComponent implements OnInit {
   errors: string[];
   id: string;
 
+  products: Product[] = [];
+  selectedProduct: Product;
+  successMessage: string;
+  errorMessage: string;
+
+
   constructor(
     private service: ProductService,
     private router: Router,
@@ -47,7 +53,7 @@ export class ProductFormComponent implements OnInit {
   }
 
   returnList() {
-    this.router.navigate(["product-list"]);
+    this.router.navigate(["/product-list"]);
   }
 
   onSubmit() {
@@ -76,6 +82,26 @@ export class ProductFormComponent implements OnInit {
       );
     }
   }
+
+  confirmDeletion(product : Product) {
+    this.selectedProduct = product;
+  }
+
+  deleteProduct() {
+    this.service.deleteId(this.selectedProduct)
+      .subscribe(
+          response => {
+            this.successMessage = 'Cliente excluído com sucesso!';
+            // Recarregar a página
+            window.location.reload();
+          },
+          error => {
+            console.error('Erro ao excluir cliente:', error);
+            this.errorMessage = 'Erro ao excluir cliente: ' + error.message;
+          }
+      );
+  }
+
 }
 
 

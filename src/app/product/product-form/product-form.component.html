@@ -93,21 +93,44 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-12">
                 <button type="submit" class="btn btn-success" *ngIf="!product.id">
                     <i class="fa fa-save"></i> Salvar
                 </button>
 
-                <button type="submit" class="btn btn-primary" *ngIf="product.id">
+                <button type="submit" class="btn btn-success" *ngIf="product.id">
                     <i class="fa fa-sync-alt"></i> Atualizar
                 </button>
 
-                <button type="button" class="btn btn-danger ml-1" (click)="returnList()">
+                <button type="button" class="btn btn-secondary ml-1" routerLink="/client-list">
                     <i class="fa fa-arrow-alt-circle-left"></i> Voltar
+                </button>
+                 <!-- Button open modal -->
+                <button type="button" class="btn btn-danger ml-1" *ngIf="product.id" (click)="confirmDeletion(product)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                     <i class="fa fa-trash"></i> Excluir
                 </button>
             </div>
         </div>
     </form>
-</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Excluir Produto?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         Deseja realmente excluir o produto <b>{{product.name}}</b>?
+        </div>
+        <div class="modal-footer">
+
+          <button type="button" data-dismiss="modal" class="btn btn-success" (click)="deleteProduct()" routerLink="/product-list">Confirmar</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa fa-arrow-alt-circle-left"></i> Voltar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 

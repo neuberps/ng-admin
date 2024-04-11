@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+
   totalLength: any;
   page: number = 1;
 
@@ -33,23 +34,5 @@ export class ProductListComponent implements OnInit {
     this.router.navigate(['product-form'])
   }
 
-  confirmDeletion(product : Product) {
-    this.selectedProduct = product;
-  }
-
-  deleteProduct() {
-    this.service.deleteId(this.selectedProduct)
-      .subscribe(
-          response => {
-            this.successMessage = 'Produto excluído com sucesso!';
-            // Recarregar a página
-            window.location.reload();
-          },
-          error => {
-            console.error('Erro ao excluir produto:', error);
-            this.errorMessage = 'Erro ao excluir produto: ' + error.message;
-          }
-      );
-  }
 }
 

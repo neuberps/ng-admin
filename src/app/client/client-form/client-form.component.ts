@@ -6,14 +6,20 @@ import { Observable } from "rxjs";
 
 @Component({
   selector: "app-form",
-  templateUrl: "./form.component.html",
-  styleUrls: ["./form.component.css"],
+  templateUrl: "./client-form.component.html",
+  styleUrls: ["./client-form.component.css"],
 })
-export class FormComponent implements OnInit {
+export class ClientFormComponent implements OnInit {
+
   client: Client;
   success: boolean = false;
   errors: string[];
   id: string;
+
+  clients: Client[] = [];
+  selectedClient: Client;
+  successMessage: string;
+  errorMessage: string;
 
   constructor(
     private service: ClientService,
@@ -75,5 +81,24 @@ export class FormComponent implements OnInit {
         }
       );
     }
+  }
+
+  confirmDeletion(client : Client) {
+    this.selectedClient = client;
+  }
+
+  deleteClient() {
+    this.service.deleteId(this.selectedClient)
+      .subscribe(
+          response => {
+            this.successMessage = 'Cliente excluído com sucesso!';
+            // Recarregar a página
+            window.location.reload();
+          },
+          error => {
+            console.error('Erro ao excluir cliente:', error);
+            this.errorMessage = 'Erro ao excluir cliente: ' + error.message;
+          }
+      );
   }
 }

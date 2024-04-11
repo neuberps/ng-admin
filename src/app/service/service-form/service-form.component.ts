@@ -15,6 +15,10 @@ export class ServiceFormComponent implements OnInit {
   success: boolean = false;
   errors: string[];
   id: string;
+  services: Service[] = [];
+  selectedService: Service;
+  successMessage: string;
+  errorMessage: string;
 
   constructor(
     private serviceService: ServiceService,
@@ -28,7 +32,7 @@ export class ServiceFormComponent implements OnInit {
     let params: Observable<Params> = this.activatedRoute.params;
     params.subscribe((urlParams) => {
       this.id = urlParams["id"];
-      if(this.id){
+      if (this.id) {
         this.serviceService.findById(this.id).subscribe(
           (response) => (this.service = response),
           (errorResponse) => (this.service = new Service())
@@ -37,12 +41,12 @@ export class ServiceFormComponent implements OnInit {
     });
   }
 
-  returnList(){
+  returnList() {
     this.router.navigate(["/service-list"]);
   }
 
-  onSubmit(){
-    if(this.id){
+  onSubmit() {
+    if (this.id) {
       this.serviceService.update(this.service).subscribe(
         (response) => {
           this.success = true;
@@ -66,6 +70,25 @@ export class ServiceFormComponent implements OnInit {
         }
       );
     }
+  }
+
+  confirmDeletion(service : Service) {
+    this.selectedService = service;
+  }
+
+  deleteService() {
+    this.serviceService.delete(this.selectedService)
+      .subscribe(
+          response => {
+            this.successMessage = 'Serviço excluído com sucesso!';
+            // Recarregar a página
+            window.location.reload();
+          },
+          error => {
+            console.error('Erro ao excluir serviço:', error);
+            this.errorMessage = 'Erro ao excluir serviço: ' + error.message;
+          }
+      );
   }
 
 }

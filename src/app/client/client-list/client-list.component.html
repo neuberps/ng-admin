@@ -9,7 +9,6 @@
         <div class="col-md-2">
             <button class="btn btn-primary" (click)="createClient()">
                 <i class="fa fa-plus"></i> Cadastrar
-
             </button>
         </div>
     </div>
@@ -38,11 +37,9 @@
                         <td>{{ client.cpf }}</td>
                         <td>{{ client.registryUser }}</td>
                         <td>
-                            <button class=" btn btn-primary"
-                                    routerLink="/client-form/{{ client.id }}">
+                            <button class=" btn btn-primary" routerLink="/client-form/{{ client.id }}">
                                 <i class="fa fa-edit"></i>
                             </button>
-
                         </td>
                     </tr>
                 </tbody>
@@ -53,5 +50,4 @@
     <div class="pagination justify-content-end">
       <pagination-controls (pageChange)="page=$event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
     </div>
-
   </div>

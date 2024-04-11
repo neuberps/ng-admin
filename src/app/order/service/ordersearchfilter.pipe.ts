@@ -1,17 +1,17 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-import { Client } from '../model/client';
+import { Order } from '../model/order';
 
 @Pipe({
-  name: 'searchfilter',
+  name: 'ordersearchfilter',
 })
-export class SearchfilterPipe implements PipeTransform {
-  transform(clients: Client[], searchValue: string): Client[] {
+export class OrderSearchfilterPipe implements PipeTransform {
+  transform(clients: Order[], searchValue: string): Order[] {
     if (!clients || !searchValue) {
       return clients;
     } else {
       return clients.filter((client) =>
-        client.name
+        client.client
           .toLocaleLowerCase()
           .includes(searchValue.toLocaleLowerCase())
       );

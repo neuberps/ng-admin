@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../model/user';
 import { UserService } from '../service/user.service';
 import { Router } from '@angular/router';
+import { User } from '../model/user';
 
 @Component({
   selector: 'app-user-list',
@@ -36,22 +36,5 @@ export class UserListComponent implements OnInit {
     this.router.navigate(['/user-form'])
   }
 
-  confirmDeletion(user : User) {
-    this.selectedUser= user;
-  }
 
-  deleteUser() {
-    this.service.deleteId(this.selectedUser)
-      .subscribe(
-          response => {
-            this.successMessage = 'Usuário excluído com sucesso!';
-            // Recarregar a página
-            window.location.reload();
-          },
-          error => {
-            console.error('Erro ao excluir usuário:', error);
-            this.errorMessage = 'Erro ao excluir usuário: ' + error.message;
-          }
-      );
-  }
 }

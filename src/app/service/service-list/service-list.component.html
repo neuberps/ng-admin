@@ -26,7 +26,7 @@
             <!-- <th>ID</th> -->
             <th>Nome</th>
             <th>Email</th>
-            <th>Status</th>
+            <!-- <th>Status</th> -->
             <th>Descrição</th>
             <th>Preço</th>
             <th>Tempo de Execução</th>
@@ -41,9 +41,9 @@
             <!-- <td>{{ service.id }}</td> -->
             <td>{{ service.name}}</td>
             <td>{{ service.email }}</td>
-            <td>{{ service.status }}</td>
+            <!-- <td>{{ service.status }}</td> -->
             <td>{{ service.description }}</td>
-            <td>{{ service.price }}</td>
+            <td>{{ service.price | currency: 'BRL':'symbol':'1.2-2'}}</td>
             <td>{{ service.runtime }}</td>
             <td>{{ service.term }}</td>
             <td>{{ service.registryUser }}</td>

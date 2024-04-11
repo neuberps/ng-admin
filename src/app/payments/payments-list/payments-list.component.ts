@@ -36,9 +36,7 @@ export class PaymentsListComponent implements OnInit {
     this.router.navigate(['/payment/form'])
   }
 
-  confirmDeletion(payments : Payment) {
-    this.selectedPayment = payments;
-  }
+
 
   deletePayment() {
     this.servicePayment.deleteId(this.selectedPayment)

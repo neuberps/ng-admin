@@ -15,8 +15,13 @@ export class PaymentsFormComponent implements OnInit {
   payment:Payment;
   status:StatusPayment[] = [];
   methods: Method[] = [];
+  selectedPayment: Payment;
+
   success: boolean = false;
   errors: string[];
+  successMessage: string;
+  errorMessage: string;
+
   id: string;
 
   constructor(
@@ -74,6 +79,9 @@ export class PaymentsFormComponent implements OnInit {
       );
     }
   }
+  confirmDeletion(payments : Payment) {
+    this.selectedPayment = payments;
+  }
 
   findStatus(){
     this.servicePayment
@@ -85,4 +93,19 @@ export class PaymentsFormComponent implements OnInit {
       .findAllMetodPayment()
       .subscribe( response => this.methods = response);
   }
+
+  deletePayment() {
+    this.servicePayment.deleteId(this.selectedPayment)
+      .subscribe(
+          response => {
+            this.successMessage = 'Pagamento excluído com sucesso!';
+            // Recarregar a página
+            window.location.reload();
+          },
+          error => {
+            console.error('Erro ao excluir o pagamneto:', error);
+            this.errorMessage = 'Erro ao excluir pagamneto: ' + error.message;
+          }
+      );
+    }
 }

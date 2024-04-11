@@ -44,37 +44,14 @@
                                     routerLink="/payment/form/{{payment.id}}">
                                 <i class="fa fa-edit"></i>
                             </button>
-                            <button class="ml-1 btn btn-danger" data-bs-toggle="modal"
-                            data-bs-target="#modalDel" (click)="confirmDeletion(payment)">
-                                <i class="fa fa-trash"></i>
-                            </button>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-    <div id="modalDel" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                   <h4>Confirmação</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Confirma exclusão do(a) Cliente?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" data-bs-dismiss="modal"
-                class="btn btn-success" (click)="deletePayment()">Confirmar</button>
-                <div class="modal-footer">
-                    <button type="button" data-bs-dismiss="modal"
-                class="btn btn-danger">Cancelar</button>
-                </div>
-            </div>
-        </div>
+    <div class="pagination justify-content-end">
+      <pagination-controls (pageChange)="page=$event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
     </div>
   </div>
-  <br>
-  <div class="pagination justify-content-end">
-    <pagination-controls (pageChange)="page=$event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
-  </div>
+

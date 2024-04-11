@@ -11,9 +11,6 @@
                 <div class="alert alert-success" role="alert" *ngIf="success == true">
                     Cliente adicionado/salvo com sucesso!
                 </div>
-                <!-- <div class="alert alert-danger" role="alert" *ngFor="let erro os errors">
-                    {{ erro }}
-                </div> -->
             </div>
         </div>
 
@@ -47,7 +44,6 @@
                 <div class="form-group">
                     <label>Metodo de pagamento: *</label>
                     <select  class="form-control" [(ngModel)]="payment.paymentMethod" name="value">
-                      <option selected >Selecione metodo de pagamento</option>
                       <option *ngFor="let method of methods" value="{{method.id}}">{{method.name}}</option>
                   </select>
                 </div>
@@ -78,10 +74,31 @@
                     <i class="fa fa-sync-alt"></i> Atualizar
                 </button>
 
-                <button type="button" class="btn btn-danger ml-1" (click)="returnList()">
+                <button type="button" class="btn btn-secondary ml-1" (click)="returnList()">
                     <i class="fa fa-arrow-alt-circle-left"></i> Voltar
+                </button>
+                 <!-- Button open modal -->
+                <button type="button" class="btn btn-danger ml-1" *ngIf="payment.id" (click)="confirmDeletion(payment)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <i class="fa fa-trash"></i> Excluir
                 </button>
             </div>
         </div>
     </form>
+
+      <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Excluir Cliente?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         Deseja realmente excluir o pagamneto no valor de : <b>{{payment.value}}</b>?
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" class="btn btn-success" (click)="deletePayment()" routerLink="/payment/list">Confirmar</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa fa-arrow-alt-circle-left"></i> Voltar</button>
+        </div>
+      </div>
 </div>

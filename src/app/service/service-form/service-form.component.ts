@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import { Observable } from "rxjs";
 import { Service } from '../model/service';
-import { ServiceService } from '../services/service.service';
+import { ServiceService } from '../service/service.service';
 
 @Component({
   selector: 'app-service-form',

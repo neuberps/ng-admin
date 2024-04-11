@@ -11,16 +11,16 @@ export class UserService {
 
   constructor( private http: HttpClient ) { }
 
+  findAll() : Observable<User[]> {
+    return this.http.get<User[]> ('http://localhost:9004/api/users');
+  }
+
   save( user: User ) : Observable<User> {
     return this.http.post<User>('http://localhost:9004/api/users', user);
   }
 
   update( user: User) : Observable<any> {
     return this.http.put<User>(`http://localhost:9004/api/users/${user.id}`, user);
-  }
-
-  findAll() : Observable<User[]> {
-    return this.http.get<User[]> ('http://localhost:9004/api/users');
   }
 
   getById( id: string ) : Observable<User> {

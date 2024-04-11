@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
 
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './template/navbar/navbar.component';
@@ -13,6 +14,10 @@ import { ServiceFormComponent } from './crud-service/service-form/service-form.c
 import { ServiceListComponent } from './crud-service/service-list/service-list.component';
 import { ServiceService } from './crud-service/services/service.service';
 import { ServicessearchfilterPipe } from './crud-service/services/servicessearchfilter.pipe';
+import { ClientFormComponent } from './client/client-form/client-form.component';
+import { ClientListComponent } from './client/client-list/client-list.component';
+import { ClientService } from './client/service/client.service';
+import { SearchfilterPipe } from './client/service/searchfilter.pipe';
 
 
 @NgModule({
@@ -24,6 +29,9 @@ import { ServicessearchfilterPipe } from './crud-service/services/servicessearch
     ServiceFormComponent,
     ServiceListComponent,
     ServicessearchfilterPipe,
+    ClientFormComponent,
+    ClientListComponent,
+    SearchfilterPipe
 
   ],
   imports: [
@@ -33,7 +41,7 @@ import { ServicessearchfilterPipe } from './crud-service/services/servicessearch
     HttpClientModule,
     NgxPaginationModule
   ],
-  providers: [ServiceService],
+  providers: [ServiceService, ClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

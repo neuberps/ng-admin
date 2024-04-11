@@ -12,7 +12,7 @@ import { SearchfilterPipe } from 'src/app/client/service/searchfilter.pipe';
 
 @NgModule({
   declarations: [
-    ClientFormComponent,
+    // ClientFormComponent,
     ClientListComponent,
     SearchfilterPipe
 
@@ -23,11 +23,9 @@ import { SearchfilterPipe } from 'src/app/client/service/searchfilter.pipe';
     FormsModule,
     NgxPaginationModule,
 
-
-
   ],
   exports: [
-    ClientFormComponent,
+    // ClientFormComponent,
     ClientListComponent
   ]
 })

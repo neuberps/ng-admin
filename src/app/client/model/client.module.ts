@@ -6,7 +6,7 @@ import { FormComponent } from '../form/form.component';
 import { FormsModule } from '@angular/forms';
 import { ListComponent } from '../list/list.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { SearchfilterPipe } from 'src/app/searchfilter.pipe';
+import { SearchfilterPipe } from 'src/app/client/service/searchfilter.pipe';
 
 
 

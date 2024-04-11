@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ListCategoryComponent } from './list-category/list-category.component';
+import { CategoryListComponent } from './category-list/category-list.component';
+import { CategoryFormComponent } from './category-form/category-form.component';
 
 const routes: Routes = [
-  { path: 'listCategory', component: ListCategoryComponent }
+  { path: 'listCategory', component: CategoryListComponent  },
+  { path: 'formCategory', component: CategoryFormComponent },
+  { path: 'formCategory/:id', component: CategoryFormComponent }
 ];
 
 @NgModule({

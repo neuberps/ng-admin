@@ -34,7 +34,7 @@
             *ngFor="let order of orders | ordersearchfilter:searchValue |  paginate: { itemsPerPage: 5, currentPage: page, totalItems: totalLength } ">
             <td>{{ order.client }}</td>
             <td>{{ order.orderItems }}</td>
-            <td>{{ order.orderTotal }}</td>
+            <td>{{ order.orderTotal | currency: 'BRL' }}</td>
             <td>{{ order.paymentInformation }}</td>
             <td>{{ order.registryUser }}</td>
             <td>

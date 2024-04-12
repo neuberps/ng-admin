@@ -2,7 +2,7 @@ export class Order {
   id: string;
   client: string;
   orderItems: string;
-  orderTotal: string;
+  orderTotal: number;
   paymentInformation: string;
   registryUser: string;
   orderStatus: string;

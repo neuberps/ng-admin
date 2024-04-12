@@ -37,7 +37,7 @@
                         <td>{{ payment.paymentMethod }}</td>
                         <td>{{ payment.created | date:'dd/MM/yyyy  HH:mm:ss' }}</td>
                         <td>{{ payment.updated  | date:'dd/MM/yyyy  HH:mm:ss'}}</td>
-                        <td>R$ {{ payment.value }}</td>
+                        <td>{{ payment.value | currency}}</td>
                         <td>{{ payment.status }}</td>
                         <td>
                             <button class=" btn btn-primary"

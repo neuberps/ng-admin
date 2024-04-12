@@ -11,7 +11,7 @@ export class PaymentsSearchfilterPipe implements PipeTransform {
     if(!payments || ! searchValue) {
       return payments;
     } else {
-      return payments.filter(payment => payment.status.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()));
+      return payments.filter(payment => payment.status.includes(searchValue));
     }
   }
 }

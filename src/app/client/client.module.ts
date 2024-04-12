@@ -14,7 +14,8 @@ import { ClientRoutingModule } from './client-routing.module';
   declarations: [
     ClientFormComponent,
     ClientListComponent,
-    SearchfilterPipe
+    SearchfilterPipe,
+
 
   ],
   imports: [

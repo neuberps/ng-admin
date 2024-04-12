@@ -2,7 +2,7 @@ export class Product {
   id: string;
   name: string;
   description: string;
-  price: 'BigDecimal';
+  price: number;
   category: string;
   brand: string;
   stock: string;

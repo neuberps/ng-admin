@@ -36,7 +36,7 @@
                     <tr *ngFor="let product of products | productsearchfilter:searchValue |  paginate: { itemsPerPage: 5, currentPage: page, totalItems: totalLength } ">
                         <td>{{ product.name }}</td>
                         <td>{{ product.description }}</td>
-                        <td>{{ product.price }}</td>
+                        <td>{{ product.price | currency : 'BRL'}}</td>
                         <td>{{ product.category }}</td>
                         <td>{{ product.brand }}</td>
                         <td>{{ product.stock }}</td>

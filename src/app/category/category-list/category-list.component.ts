@@ -13,8 +13,8 @@ export class CategoryListComponent implements OnInit {
   totalLength: any;
   page: number = 1;
 
-  searchValue: any;
-  searchTypeValue: any;
+  searchValue: string;
+  searchBy: string;
 
   categories: Category[] = [];
   selectedCategory: Category;

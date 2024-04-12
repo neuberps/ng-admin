@@ -6,12 +6,22 @@ import { Category } from '../category';
 })
 export class CategorySearchfilterPipe implements PipeTransform {
 
-  transform(categories: Category[], searchValue: any): Category[] {
+  transform(categories: Category[], searchValue: string, searchBy: string): Category[] {
 
-    if(!categories || ! searchValue) {
-      return categories;
-    } else if (categories || searchValue) {
-      return categories.filter(category => category.name.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()));
+    if(!categories) {
+      return [];
+    }
+    if(!searchValue) {
+      return categories
+    }
+
+    switch(searchBy) {
+      case 'type':
+        return categories.filter(category => category.type.toString().toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()));
+      case 'name':
+        return categories.filter(category => category.name.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()));
+      default:
+        return categories.filter(category => category.name.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()) || category.type.toString().toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()));
     }
   }
 }

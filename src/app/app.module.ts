@@ -17,7 +17,7 @@ import { CategoryModule } from './category/model/category.module';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

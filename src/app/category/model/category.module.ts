@@ -10,9 +10,11 @@ import { CategoryFormComponent } from '../category-form/category-form.component'
 
 
 
+
 @NgModule({
   declarations: [
     CategorySearchfilterPipe,
+
     CategoryListComponent,
     CategoryFormComponent
   ],

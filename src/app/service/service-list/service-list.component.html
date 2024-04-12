@@ -25,12 +25,12 @@
           <tr>
             <!-- <th>ID</th> -->
             <th>Nome</th>
-            <th>Email</th>
+            <!-- <th>Email</th> -->
             <!-- <th>Status</th> -->
             <th>Descrição</th>
             <th>Preço</th>
-            <th>Tempo de Execução</th>
-            <th>Prazo</th>
+            <!-- <th>Tempo de Execução</th> -->
+            <th>Prazo (Mês)</th>
             <th>Registro</th>
           </tr>
         </thead>
@@ -40,13 +40,13 @@
             *ngFor="let service of services | servicessearchfilter:searchValue |  paginate: { itemsPerPage: 5, currentPage: page, totalItems: totalLength } ">
             <!-- <td>{{ service.id }}</td> -->
             <td>{{ service.name}}</td>
-            <td>{{ service.email }}</td>
+            <!-- <td>{{ service.email }}</td> -->
             <!-- <td>{{ service.status }}</td> -->
             <td>{{ service.description }}</td>
             <td>{{ service.price | currency}}</td>
-            <td style="text-align: center;align-items: center">{{ service.runtime }}</td>
-            <td style="text-align: center;align-items: center">{{ service.term }}</td>
-            <td style="text-align: center;align-items: center">{{ service.registryUser }}</td>
+            <!-- <td>{{ service.runtime }}</td> -->
+            <td>{{ service.term }}</td>
+            <td>{{ service.registryUser }}</td>
             <td>
               <button class=" btn btn-primary" id="button" routerLink="/service-form/{{ service.id }}">
                 <i class="fa fa-edit"></i>

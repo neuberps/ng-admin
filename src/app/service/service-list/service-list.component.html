@@ -43,10 +43,10 @@
             <td>{{ service.email }}</td>
             <!-- <td>{{ service.status }}</td> -->
             <td>{{ service.description }}</td>
-            <td>{{ service.price | currency: 'BRL':'symbol':'1.2-2'}}</td>
-            <td>{{ service.runtime }}</td>
-            <td>{{ service.term }}</td>
-            <td>{{ service.registryUser }}</td>
+            <td>{{ service.price | currency}}</td>
+            <td style="text-align: center;align-items: center">{{ service.runtime }}</td>
+            <td style="text-align: center;align-items: center">{{ service.term }}</td>
+            <td style="text-align: center;align-items: center">{{ service.registryUser }}</td>
             <td>
               <button class=" btn btn-primary" id="button" routerLink="/service-form/{{ service.id }}">
                 <i class="fa fa-edit"></i>

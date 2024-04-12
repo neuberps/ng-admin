@@ -7,6 +7,8 @@ import { ServiceListComponent } from './service-list/service-list.component';
 import { ServicessearchfilterPipe } from './service/servicessearchfilter.pipe';
 import { ServiceRoutingModule } from './service-routing.module';
 
+
+
 @NgModule({
   declarations:[
     ServiceFormComponent,
@@ -22,6 +24,9 @@ import { ServiceRoutingModule } from './service-routing.module';
   exports:[
     ServiceFormComponent,
     ServiceListComponent
+  ],
+  providers:[
+    
   ]
 })
 export class ServiceModule {}

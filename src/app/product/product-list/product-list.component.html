@@ -16,7 +16,17 @@
     <div class="row">
         <div class="col-md-12">
           <form class="d-flex mb-5" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" [(ngModel)]="searchValue" name="search">
+            <input class="form-control me-2" type="search" placeholder="Pesquisa" [(ngModel)]="searchValue" name="search">
+            <select class="form-select-sm" [(ngModel)]="searchBy" name="search-filter">
+              <option value="">Todos</option>
+              <option value="name">Nome</option>
+              <option value="description">Descrição</option>
+              <option value="price">Preço</option>
+              <option value="category">Categoria</option>
+              <option value="brand">Marca</option>
+              <option value="stock">Estoque</option>
+              <option value="supplier">Fornecedor</option>
+            </select>
           </form>
             <table class="table table-sm table-condensed table-hover">
                 <thead>
@@ -33,7 +43,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let product of products | productsearchfilter:searchValue |  paginate: { itemsPerPage: 5, currentPage: page, totalItems: totalLength } ">
+                    <tr *ngFor="let product of products | productsearchfilter:searchValue: searchBy |  paginate: { itemsPerPage: 5, currentPage: page, totalItems: totalLength } ">
                         <td>{{ product.name }}</td>
                         <td>{{ product.description }}</td>
                         <td>{{ product.price | currency : 'BRL'}}</td>

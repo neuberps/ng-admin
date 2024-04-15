@@ -14,6 +14,7 @@ export class ProductListComponent implements OnInit {
   page: number = 1;
 
   searchValue: any;
+  searchBy: string;
 
   products: Product[] = [];
   selectedProduct: Product;

@@ -40,11 +40,17 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
+                    <label>Categoria: *</label>
+                    <input placeholder="Qual categoria do serviço" type="text" class="form-control" [(ngModel)]="service.category" name="status"/>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
                     <label>Status: *</label>
                     <input placeholder="Qual status do serviço [true = ativo / false = inativo]" type="text" class="form-control" [(ngModel)]="service.status" name="status"/>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-14">
               <div class="form-group">
                   <label>Descrição: *</label>
                   <input placeholder="Descreva o serviço" type="text" class="form-control" [(ngModel)]="service.description" name="description"/>

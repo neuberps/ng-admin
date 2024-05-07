@@ -41,7 +41,11 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Categoria: *</label>
-                    <input placeholder="Qual categoria do serviço" type="text" class="form-control" [(ngModel)]="service.category" name="status"/>
+                    <select class="form-select" aria-label="Default select" [(ngModel)]="service.idCategory" name="categoria">
+                      <option selected>Selecione uma categoria</option>
+                      <option *ngFor="let categoria of idCategorias" [value]="categoria.idCategory">{{ categoria.name }}</option>
+                    </select>
+
                 </div>
             </div>
             <div class="col-md-6">

@@ -20,6 +20,14 @@ export class ServiceFormComponent implements OnInit {
   successMessage: string;
   errorMessage: string;
 
+  idCategorias: {idCategory: string, name: string}[] =[
+    {idCategory: '662aa810d0e49675ae7dfabb', name: 'Alimentação'},
+    {idCategory: '662aa825d0e49675ae7dfabc', name: 'Entrega'},
+    {idCategory: '662aa84dd0e49675ae7dfabe', name: 'Lanches'},
+    {idCategory: '662aa834d0e49675ae7dfabd', name: 'Presentes'},
+  ];
+  selectCategoria: string | undefined;
+
   constructor(
     private serviceService: ServiceService,
     private router: Router,
@@ -28,7 +36,16 @@ export class ServiceFormComponent implements OnInit {
     this.service = new Service();
   }
 
+
+  getCategorias(): { idCategory: string, name: string }[] {
+    return this.idCategorias;
+  }
+
+
   ngOnInit(): void {
+    this.idCategorias = this.getCategorias();
+
+    
     let params: Observable<Params> = this.activatedRoute.params;
     params.subscribe((urlParams) => {
       this.id = urlParams["id"];

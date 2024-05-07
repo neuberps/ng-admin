@@ -2,7 +2,7 @@ export class Service {
   id: string;
   name: string;
   email: string;
-  category: string;
+  idCategory: string;
   status: boolean;
   description: string;
   price: number;

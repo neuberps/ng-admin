@@ -36,6 +36,10 @@ export class ServiceService {
     return this.httpClient.get<any>(`${this.API_Spring}/getCategory/${category}`);
   }
 
+  findByTypeService() : Observable<Category[]> {
+    return this.httpClient.get<Category[]> ('http://localhost:9001/api/category/findByTypeService');
+  }
+
   delete(service: Service): Observable<any>{
     return this.httpClient.delete<any>(`${this.API_Spring}/${service.id}`);
   }

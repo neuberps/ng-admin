@@ -43,9 +43,9 @@
       <div class="col-md-6">
         <div class="form-group">
           <label>Categoria: *</label>
-          <select class="form-select" aria-label="Default select" [(ngModel)]="categories.name" name="categoria">
+          <select class="form-select" aria-label="Default select" [(ngModel)]="service.idCategory" name="categoria">
             <option selected>Selecione uma categoria</option>
-            <option *ngFor="let categoria of idCategorias" [value]="categoria.idCategory">{{ categoria.name }}</option>
+            <option *ngFor="let categoria of categories" [value]="categoria.type">{{ categoria.name }}</option>
           </select>
         </div>
       </div>

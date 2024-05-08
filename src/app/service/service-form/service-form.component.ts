@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, Params } from "@angular/router";
 import { Observable } from "rxjs";
 import { Service } from '../model/service';
 import { ServiceService } from '../service/service.service';
+import { Category } from 'src/app/category/category';
 
 @Component({
   selector: 'app-service-form',
@@ -21,13 +22,13 @@ export class ServiceFormComponent implements OnInit {
   successMessage: string;
   errorMessage: string;
 
-  idCategorias: {idCategory: string, name: string}[] =[
-    {idCategory: '662aa810d0e49675ae7dfabb', name: 'Alimentação'},
-    {idCategory: '662aa825d0e49675ae7dfabc', name: 'Entrega'},
-    {idCategory: '662aa84dd0e49675ae7dfabe', name: 'Lanches'},
-    {idCategory: '662aa834d0e49675ae7dfabd', name: 'Presentes'},
-  ];
-  selectCategoria: string | undefined;
+  // idCategorias: {idCategory: string, name: string}[] =[
+  //   {idCategory: '662aa810d0e49675ae7dfabb', name: 'Alimentação'},
+  //   {idCategory: '662aa825d0e49675ae7dfabc', name: 'Entrega'},
+  //   {idCategory: '662aa84dd0e49675ae7dfabe', name: 'Lanches'},
+  //   {idCategory: '662aa834d0e49675ae7dfabd', name: 'Presentes'},
+  // ];
+  // selectCategoria: string | undefined;
 
   constructor(
     private serviceService: ServiceService,
@@ -38,13 +39,13 @@ export class ServiceFormComponent implements OnInit {
   }
 
 
-  getCategorias(): { idCategory: string, name: string }[] {
-    return this.idCategorias;
-  }
+  // getCategorias(): { categories: string}[] {
+  //   return this.categories;
+  // }
 
 
   ngOnInit(): void {
-    this.idCategorias = this.getCategorias();
+    //this.categories = this.getCategorias();
 
 
     let params: Observable<Params> = this.activatedRoute.params;

@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label>Nome: *</label>
                     <input type="text" class="form-control" [(ngModel)]="category.name" name="name"/>
@@ -33,9 +33,17 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Tipo: *</label>
-                    <input type="text" class="form-control" [(ngModel)]="category.type" name="email"/>
+                    <input type="text" class="form-control" [(ngModel)]="category.type" name="type"/>
                 </div>
             </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+              <div class="form-group">
+                  <label>Imagem: *</label>
+                  <input type="text" class="form-control" [(ngModel)]="category.image" name="type"/>
+              </div>
+          </div>
         </div>
         <div class="row">
             <div class="col-md-3">

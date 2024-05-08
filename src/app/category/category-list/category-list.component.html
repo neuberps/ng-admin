@@ -15,7 +15,7 @@
         <div class="col-md-12">
 
           <form class="d-flex mb-5" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" [(ngModel)]="searchValue" name="search">
+            <input class="form-control me-2" type="search" placeholder="Pesquisar" [(ngModel)]="searchValue" name="search">
             <select class="form-select-sm" [(ngModel)]="searchBy" name="search-filter">
               <option value="">All</option>
               <option value="type">Type</option>
@@ -29,6 +29,7 @@
                       <th>Id</th>
                       <th>Nome</th>
                       <th>Tipo</th>
+                      <th></th>
                     </tr>
                 </thead>
                 <tbody>

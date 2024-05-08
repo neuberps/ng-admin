@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServiceService } from '../service/service.service';
 import { Service } from '../model/service';
+import { Category } from 'src/app/category/category';
 
 @Component({
   selector: 'app-service-list',
@@ -17,6 +18,7 @@ export class ServiceListComponent implements OnInit {
   selectedService: Service;
   successMessage: string;
   errorMessage: string;
+  categories: Category[] = [];
 
   constructor(
     private serviceService: ServiceService,
@@ -25,6 +27,35 @@ export class ServiceListComponent implements OnInit {
 
   ngOnInit(): void {
     this.serviceService.findAll().subscribe(response => this.services = response);
+    this.loadServices();
+    this.loadCategories();
+  }
+
+  loadServices(){
+    this.serviceService.findAll().subscribe(
+      (services) => {
+        this.services = services;
+      },
+      (errorResponse) => {
+        console.error('', errorResponse);
+      }
+    )
+  }
+
+  loadCategories(){
+    this.serviceService.findByTypeService().subscribe(
+      (categories) => {
+        this.categories = categories;
+      },
+      (errorResponse) => {
+        console.error('', errorResponse);
+      }
+    )
+  }
+
+  getCategoryName(idCategory: string): string {
+    const category = this.categories.find(cat => cat.id === idCategory);
+    return category ? category.name : '';
   }
 
   createService(){

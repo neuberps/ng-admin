@@ -24,15 +24,6 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label>Id do produto: *</label>
-                    <input type="text" class="form-control"
-                            [(ngModel)]="payment.idProduct" name="idProduct"/>
-                </div>
-            </div>
-        </div>
-        <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Identificaçaõ do usuario: *</label>
@@ -94,7 +85,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-         Deseja realmente excluir o pagamneto no valor de : <b>{{payment.value}}</b>?
+         Deseja realmente excluir o pagamneto no valor de : <b>{{payment.value | currency }}</b>?
         </div>
         <div class="modal-footer">
           <button type="button" data-dismiss="modal" class="btn btn-success" (click)="deletePayment()" routerLink="/payment/list">Confirmar</button>

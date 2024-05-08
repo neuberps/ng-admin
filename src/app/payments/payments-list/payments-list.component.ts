@@ -43,7 +43,6 @@ export class PaymentsListComponent implements OnInit {
       .subscribe(
           response => {
             this.successMessage = 'Pagamento excluído com sucesso!';
-            // Recarregar a página
             window.location.reload();
           },
           error => {

@@ -7,9 +7,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClientModule } from './client/client.module';
 import { ClientService } from './client/service/client.service';
+import { CategoryService } from './category/service/category.service';
+import { CategoryModule } from './category/model/category.module';
 import { HomeComponent } from './home/home.component';
 import { OrderModule } from './order/order.module';
 import { TemplateModule } from './template/template.module';
+
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -21,8 +24,12 @@ import { TemplateModule } from './template/template.module';
     ClientModule,
     OrderModule,
     NgxPaginationModule,
+    CategoryModule
   ],
-  providers: [ClientService],
+  providers: [
+    ClientService,
+    CategoryService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

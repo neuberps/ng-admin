@@ -1,35 +1,45 @@
-import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http'
 import { NgxPaginationModule } from 'ngx-pagination';
-
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-import { ClientModule } from './client/client.module';
-import { ClientService } from './client/service/client.service';
-import { CategoryService } from './category/service/category.service';
-import { CategoryModule } from './category/model/category.module';
 import { HomeComponent } from './home/home.component';
-import { OrderModule } from './order/order.module';
+import { ServiceService } from './service/service/service.service';
+import { ClientService } from './client/service/client.service';
+import { ServiceModule } from './service/service.module';
 import { TemplateModule } from './template/template.module';
 
+import { LOCALE_ID, DEFAULT_CURRENCY_CODE } from '@angular/core';
+import ptBr from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+import { ClientModule } from './client/client.module';
+
+registerLocaleData(ptBr);
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     TemplateModule,
     ClientModule,
-    OrderModule,
-    NgxPaginationModule,
-    CategoryModule
+    ServiceModule,
+    NgxPaginationModule
   ],
+
   providers: [
+    { provide: LOCALE_ID, useValue: 'pt' },
+    { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
+    ServiceService,
     ClientService,
-    CategoryService
+
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

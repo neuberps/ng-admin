@@ -54,7 +54,7 @@ export class ClientFormComponent implements OnInit {
   }
 
   returnList() {
-    this.router.navigate(["/list"]);
+    this.router.navigate(["/client-list"]);
   }
 
   onSubmit() {

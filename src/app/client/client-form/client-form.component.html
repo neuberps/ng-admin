@@ -11,16 +11,13 @@
         <div class="alert alert-success" role="alert" *ngIf="success == true">
           Cliente adicionado/salvo com sucesso!
         </div>
-        <!-- <div class="alert alert-danger" role="alert" *ngFor="let erro os errors">
-                    {{ erro }}
-                </div> -->
       </div>
     </div>
     <div class="row" *ngIf="client.id">
       <div class="col-md-12">
         <div class="form-group">
           <label>ID:</label>
-          <input type="text" class="form-control" [ngModel]="client.id" name="id" disabled="true" />
+          <input type="text" class="form-control" [(ngModel)]="client.id" name="id" disabled="true" />
         </div>
       </div>
     </div>

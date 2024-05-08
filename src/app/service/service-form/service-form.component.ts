@@ -10,6 +10,7 @@ import { ServiceService } from '../service/service.service';
   styleUrls: ['./service-form.component.css']
 })
 export class ServiceFormComponent implements OnInit {
+  categories: Category[] = [];
 
   service: Service;
   success: boolean = false;
@@ -45,7 +46,7 @@ export class ServiceFormComponent implements OnInit {
   ngOnInit(): void {
     this.idCategorias = this.getCategorias();
 
-    
+
     let params: Observable<Params> = this.activatedRoute.params;
     params.subscribe((urlParams) => {
       this.id = urlParams["id"];

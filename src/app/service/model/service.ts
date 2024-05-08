@@ -5,6 +5,7 @@ export class Service {
   idCategory: string;
   status: boolean;
   description: string;
+  image: string;
   price: number;
   runtime: number;
   term: number;

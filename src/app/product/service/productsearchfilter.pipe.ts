@@ -24,7 +24,7 @@ export class ProductSearchfilterPipe implements PipeTransform {
         case 'price':
           return products.filter(product => product.price.toString().includes(searchValue));
           case 'category':
-            return products.filter(product => product.category.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()));
+            return products.filter(product => product.idCategory.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()));
             case 'brand':
               return products.filter(product => product.brand.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()));
               case 'stock':

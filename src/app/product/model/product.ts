@@ -3,9 +3,12 @@ export class Product {
   name: string;
   description: string;
   price: number;
-  category: string;
+  idCategory: string;
+  discount: number;
   brand: string;
   stock: string;
   supplier: string;
   registryUser: string;
+  image: string;
+  quantity: number
 }

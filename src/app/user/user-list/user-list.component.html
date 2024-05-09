@@ -1,21 +1,20 @@
-<div class="container">
-  <h1 class="mt-4">Usuários</h1>
+<div class="container" >
+  <h2 class="mt-2">Usuários</h2>
   <ol class="breadcrumb mb-4">
       <li class="breadcrumb-item active">Listar Usuários</li>
   </ol>
 </div>
 <div class="container">
-    <div class="row">
-        <div class="col-md-2">
+  <div class="row">
+    <div class="col-md-2">
             <button class="btn btn-primary" (click)="createUser()">
                 <i class="fa fa-plus"></i> Cadastrar
-
             </button>
         </div>
     </div>
     <br/>
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-12">
           <form class="d-flex mb-5" role="search">
             <input class="form-control me-2" type="search" placeholder="Buscar" [(ngModel)]="searchValue" name="search">
           </form>

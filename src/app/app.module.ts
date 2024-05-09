@@ -12,6 +12,9 @@ import { ClientService } from './client/service/client.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { UserModule } from './user/user.module';
 import { UserService } from './user/service/user.service';
+import { LoginModule } from './login/login.module';
+import { LoginService } from './login/services/login.service';
+
 
 
 @NgModule({
@@ -19,7 +22,7 @@ import { UserService } from './user/service/user.service';
     AppComponent,
     HomeComponent
   ],
-  
+
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -27,12 +30,14 @@ import { UserService } from './user/service/user.service';
     TemplateModule,
     ClientModule,
     UserModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    LoginModule
 
   ],
   providers: [
     ClientService,
-    UserService
+    UserService,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })

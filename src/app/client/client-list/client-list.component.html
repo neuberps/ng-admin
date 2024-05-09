@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="mt-4">Clientes</h1>
+  <h2 class="mt-2">Clientes</h2>
   <ol class="breadcrumb mb-4">
       <li class="breadcrumb-item active">Listar Cliente</li>
   </ol>
@@ -9,7 +9,6 @@
         <div class="col-md-2">
             <button class="btn btn-primary" (click)="createClient()">
                 <i class="fa fa-plus"></i> Cadastrar
-
             </button>
         </div>
     </div>
@@ -17,7 +16,7 @@
     <div class="row">
         <div class="col-md-12">
           <form class="d-flex mb-5" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" [(ngModel)]="searchValue" name="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar" [(ngModel)]="searchValue" name="search">
           </form>
             <table class="table table-sm table-condensed table-hover">
                 <thead>
@@ -53,5 +52,4 @@
     <div class="pagination justify-content-end">
       <pagination-controls (pageChange)="page=$event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
     </div>
-
-  </div>
+</div>

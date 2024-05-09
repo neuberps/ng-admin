@@ -15,16 +15,12 @@ import { SearchfilterPipe } from 'src/app/client/service/searchfilter.pipe';
     ClientFormComponent,
     ClientListComponent,
     SearchfilterPipe
-
   ],
   imports: [
     CommonModule,
     ClientRoutingModule,
     FormsModule,
     NgxPaginationModule,
-
-
-
   ],
   exports: [
     ClientFormComponent,

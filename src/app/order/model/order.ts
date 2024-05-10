@@ -1,7 +1,7 @@
 export class Order {
   id: string;
   client: string;
-  orderItems: string;
+  orderItems: OrderItem[];
   orderTotal: number;
   paymentInformation: string;
   registryUser: string;
@@ -14,4 +14,10 @@ export class Order {
   orderDate: string;
   created: string;
   updated: string;
+}
+
+export interface OrderItem {
+  item: string;
+  quantity: number;
+  price: number;
 }

@@ -30,4 +30,27 @@ export class OrderListComponent implements OnInit {
     this.router.navigate(['/order-form']);
   }
 
+  parseOrderItems(orderItemsString: string): any[] {
+    try {
+      return JSON.parse("[" + orderItemsString + "]");
+    } catch (error) {
+      console.error("Erro ao analisar os itens do pedido:", error);
+      return [];
+    }
+  }
+
+  calculateItem(item: any): number {
+    return item.price * item.quantity;
+  }
+
+  calculateOrderTotal(order: any): number {
+    let total = 0;
+    for (let item of this.parseOrderItems(order.orderItems)) {
+      total += item.price * item.quantity;
+    }
+    return total;
+  }
+
+
+
 }

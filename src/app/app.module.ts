@@ -1,33 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { TemplateModule } from './template/template.module';
-import { HomeComponent } from './home/home.component'
-import { ClientService } from './client/service/client.service';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { UserModule } from './user/user.module';
-import { UserService } from './user/service/user.service';
-import { LoginModule } from './login/login.module';
-import { LoginService } from './login/services/login.service';
-import { PaymentsModule } from './payments/payments.module';
+import { AppRoutingModule } from './app-routing.module';
+
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 import { ServiceService } from './service/service/service.service';
+import { ClientService } from './client/service/client.service';
 import { ServiceModule } from './service/service.module';
+import { TemplateModule } from './template/template.module';
 
 import { LOCALE_ID, DEFAULT_CURRENCY_CODE } from '@angular/core';
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { ClientModule } from './client/client.module';
-import { ProductService } from './product/service/product.service';
-import { ProductModule } from './product/product.module';
+import { OrderModule } from './order/order.module';
 
 registerLocaleData(ptBr);
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,12 +30,9 @@ registerLocaleData(ptBr);
     AppRoutingModule,
     TemplateModule,
     ClientModule,
-    UserModule,
     ServiceModule,
-    NgxPaginationModule,
-    LoginModule,
-    PaymentsModule,
-    ProductModule
+    OrderModule,
+    NgxPaginationModule
   ],
 
   providers: [
@@ -48,11 +40,8 @@ registerLocaleData(ptBr);
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
     ServiceService,
     ClientService,
-    ProductService,
-    UserService,
-    LoginService
+
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-

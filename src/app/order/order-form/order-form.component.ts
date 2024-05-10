@@ -12,6 +12,8 @@ import { OrderService } from '../service/order.service';
 })
 export class OrderFormComponent implements OnInit {
   order: Order;
+  orderItems: any[];
+
   success: boolean = false;
   errors: string[];
   id: string;
@@ -21,6 +23,8 @@ export class OrderFormComponent implements OnInit {
   successMessage: string;
   errorMessage: string;
 
+  editingEnabled: boolean = true;
+
   constructor(
     private service: OrderService,
     private router: Router,
@@ -29,7 +33,7 @@ export class OrderFormComponent implements OnInit {
     this.order = new Order();
   }
 
-  ngOnInit(): void {
+    ngOnInit(): void {
     let params: Observable<Params> = this.activatedRoute.params;
     params.subscribe((urlParams) => {
       this.id = urlParams['id'];
@@ -46,7 +50,17 @@ export class OrderFormComponent implements OnInit {
     this.router.navigate(['/order-list']);
   }
 
+  convertOrderItemsToObject(orderItemsString: string): any {
+    try {
+      return JSON.parse(orderItemsString);
+    } catch (error) {
+      console.error("Erro ao converter orderItems para objeto:", error);
+      return null;
+    }
+  }
+
   onSubmit() {
+    // Verifica se 'id' está presente para determinar se é uma atualização ou uma criação
     if (this.id) {
       this.service.update(this.order).subscribe(
         (response) => {
@@ -73,6 +87,40 @@ export class OrderFormComponent implements OnInit {
     }
   }
 
+
+  // Método para converter a string de orderItems em um array JSON válido
+  convertOrderItemsToArray(orderItemsString: string): any[] {
+    try {
+      const jsonArrayString = `[${orderItemsString}]`;
+      return JSON.parse(jsonArrayString);
+    } catch (error) {
+      console.error("Erro ao converter orderItems para array:", error);
+      return [];
+    }
+  }
+
+  // Método para formatar os itens do pedido
+  formatOrderItems(): string {
+    let formattedItems = '';
+
+    if (Array.isArray(this.order.orderItems)) {
+      this.order.orderItems.forEach((item: any, index: number) => {
+        formattedItems += `${item.item} Quant: ${item.quantity} R$ ${item.price.toFixed(2)}\n`;
+      });
+    } else if (typeof this.order.orderItems === 'string') {
+      this.order.orderItems = this.convertOrderItemsToArray(this.order.orderItems);
+      this.order.orderItems.forEach((item: any, index: number) => {
+        formattedItems += `${item.item} Quant: ${item.quantity} R$ ${item.price.toFixed(2)}\n`;
+      });
+    } else {
+      console.error("orderItems não é uma array:", this.order.orderItems);
+    }
+
+    console.log(formattedItems);
+
+    return formattedItems;
+  }
+
   confirmDeletion(client: Order) {
     this.selectedClient = client;
   }
@@ -90,4 +138,9 @@ export class OrderFormComponent implements OnInit {
       }
     );
   }
+
+
 }
+
+
+

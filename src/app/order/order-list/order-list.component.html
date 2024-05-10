@@ -21,7 +21,7 @@
       <table class="table table-sm table-condensed table-hover">
         <thead>
           <tr>
-            <th>Nome</th>
+            <th>Cliente</th>
             <th>Itens</th>
             <th>Total</th>
             <th>Pagamento</th>
@@ -33,8 +33,26 @@
           <tr
             *ngFor="let order of orders | ordersearchfilter:searchValue |  paginate: { itemsPerPage: 5, currentPage: page, totalItems: totalLength } ">
             <td>{{ order.client }}</td>
-            <td>{{ order.orderItems }}</td>
-            <td>{{ order.orderTotal | currency: 'BRL' }}</td>
+            <td>
+              <ul>
+                <li *ngFor="let item of parseOrderItems(order.orderItems.toString())" class="d-flex justify-content-between">
+
+                  <div class="orderItems">
+                    {{ item.item }}
+                  </div>
+                  <div class="orderQuantity">
+                    Quant: {{ item.quantity }}
+                  </div>
+                  <div class="orderPrice">
+                    {{ item.price | currency }}
+                  </div>
+                </li>
+                <div class="totalPrice">
+                  {{ calculateItem(order) | currency: 'BRL' }}
+                </div>
+              </ul>
+            </td>
+            <td class="text-end">{{ calculateOrderTotal(order) | currency: 'BRL' }}</td>
             <td>{{ order.paymentInformation }}</td>
             <td>{{ order.registryUser }}</td>
             <td>

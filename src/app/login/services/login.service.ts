@@ -32,8 +32,9 @@ export class LoginService {
 
   // Função login:
   login(email: string, password: string){
-    return this.httpClient.post<LoginResponse>(this.apiUrl + "/login", { email, password }).pipe(
+    return this.httpClient.post<LoginResponse>(this.apiUrl + "/loginAdmin", { email, password }).pipe(
       tap((value) => {
+        // validar se a role do usuário é igual a admin
         this.saveUserDataInSession(value.token, value.user);
         this.router.navigate(["home"]);
     })

@@ -1,22 +1,15 @@
-import { Component, AfterViewInit } from '@angular/core';
-import jQuery from 'jquery'
-import { LoginService } from './login/services/login.service';
+import { AfterViewInit, Component } from '@angular/core';
+import jQuery from 'jquery';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements AfterViewInit {
   title = 'clientes-app';
 
-  constructor(private loginService: LoginService) {}
-
-  isLoggedIn(): boolean {
-    return this.loginService.isLoggedIn();
-  }
-
-    ngAfterViewInit(){
+  ngAfterViewInit(){
     (function($) {
         "use strict";
 

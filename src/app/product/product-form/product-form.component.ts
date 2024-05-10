@@ -30,14 +30,7 @@ export class ProductFormComponent implements OnInit {
     this.product = new Product();
   }
   ngOnInit(): void {
-    // let Params = this.activatedRoute.params
-    // // console.log(Params.value);
-    // if(Params.value.id) {
-    //   this.id = Params.value.id;
-    //   this.service
-    //       .getById(this.id)
-    //       .subscribe( response = > this.client = response)
-    // }
+
 
 
     let params: Observable<Params> = this.activatedRoute.params;
@@ -103,5 +96,3 @@ export class ProductFormComponent implements OnInit {
   }
 
 }
-
-

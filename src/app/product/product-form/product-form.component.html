@@ -95,10 +95,20 @@
             <div class="col-md-6">
               <div class="form-group">
                   <label>Imagem: *</label>
-                  <input type="text" class="form-control"
-                          [(ngModel)]="product.image" name="image"/>
+                  <div class="col-ms-2">
+                  <input type="file" class="file-upload" onchange="console.log(event.target.files)">
+                </div>
+                  <!--<input type="text" class="form-control"
+                          [(ngModel)]="product.image" name="image"/> -->
               </div>
           </div>
+          <div class="col-md-6">
+            <div class="form-group">
+                <label>Desconto: *</label>
+                <input type="text" class="form-control"
+                        [(ngModel)]="product.discount" name="discount" placeholder="Ex.: 10"/>
+            </div>
+        </div>
         </div>
         <div class="row">
             <div class="col-md-12">

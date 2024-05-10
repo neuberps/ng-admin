@@ -8,22 +8,13 @@ import { ClientFormComponent } from './client-form/client-form.component';
 import { ClientRoutingModule } from './client-routing.module';
 
 
-
 @NgModule({
-  declarations: [
-    ClientFormComponent,
-    ClientListComponent,
-    SearchfilterPipe
-
-  ],
+  declarations: [ClientFormComponent, ClientListComponent, SearchfilterPipe],
   imports: [
     CommonModule,
     ClientRoutingModule,
     FormsModule,
     NgxPaginationModule,
-
-
-
   ],
   exports: [
     ClientFormComponent,
@@ -31,3 +22,8 @@ import { ClientRoutingModule } from './client-routing.module';
   ]
 })
 export class ClientModule { }
+
+
+
+
+

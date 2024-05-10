@@ -15,6 +15,14 @@ import { UserService } from './user/service/user.service';
 import { LoginModule } from './login/login.module';
 import { LoginService } from './login/services/login.service';
 
+import { ServiceService } from './service/service/service.service';
+import { ServiceModule } from './service/service.module';
+
+import { LOCALE_ID, DEFAULT_CURRENCY_CODE } from '@angular/core';
+import ptBr from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(ptBr);
 
 
 @NgModule({
@@ -30,11 +38,15 @@ import { LoginService } from './login/services/login.service';
     TemplateModule,
     ClientModule,
     UserModule,
+    ServiceModule,
     NgxPaginationModule,
     LoginModule
 
   ],
   providers: [
+    { provide: LOCALE_ID, useValue: 'pt' },
+    { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
+    ServiceService,
     ClientService,
     UserService,
     LoginService
@@ -42,3 +54,4 @@ import { LoginService } from './login/services/login.service';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

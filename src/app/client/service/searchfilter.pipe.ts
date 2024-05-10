@@ -4,17 +4,20 @@ import { Client } from '../model/client';
 
 
 @Pipe({
-  name: 'searchfilter'
+  name: 'searchfilter',
 })
 export class SearchfilterPipe implements PipeTransform {
-
-  transform(clients: Client[], searchValue:string): Client[] {
-
-    if(!clients || ! searchValue) {
+  transform(clients: Client[], searchValue: string): Client[] {
+    if (!clients || !searchValue) {
       return clients;
     } else {
-      return clients.filter(client => client.name.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()));
+      return clients.filter((client) =>
+        client.name
+          .toLocaleLowerCase()
+          .includes(searchValue.toLocaleLowerCase())
+      );
     }
   }
 
 }
+

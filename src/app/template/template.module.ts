@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { Router, RouterModule } from '@angular/router';
-import { LoginService } from '../login/services/login.service';
-
 
 
 @NgModule({
@@ -23,3 +21,4 @@ import { LoginService } from '../login/services/login.service';
   ]
 })
 export class TemplateModule { }
+

@@ -5,35 +5,25 @@ import { Router } from '@angular/router';
 import { Client } from '../model/client';
 
 @Component({
-  selector: 'app-list',
+  selector: 'app-client-list',
   templateUrl: './client-list.component.html',
-  styleUrls: ['./client-list.component.css']
+  styleUrls: ['./client-list.component.css'],
 })
 export class ClientListComponent implements OnInit {
-
   totalLength: any;
   page: number = 1;
 
   searchValue: any;
 
   clients: Client[] = [];
-  selectedClient: Client;
-  successMessage: string;
-  errorMessage: string;
 
-  constructor(
-    private service: ClientService,
-    private router: Router) {}
+  constructor(private service: ClientService, private router: Router) {}
 
   ngOnInit(): void {
-    this.service
-      .findAll()
-      .subscribe( response => this.clients = response);
+    this.service.findAll().subscribe((response) => (this.clients = response));
   }
 
   createClient() {
-    this.router.navigate(['/client-form'])
+    this.router.navigate(['/client-form']);
   }
-
-
 }

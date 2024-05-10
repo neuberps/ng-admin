@@ -1,6 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Client } from '../model/client';
 
+
+
 @Pipe({
   name: 'searchfilter',
 })
@@ -16,5 +18,6 @@ export class SearchfilterPipe implements PipeTransform {
       );
     }
   }
+
 }
 

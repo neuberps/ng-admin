@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "clientapp": {
+    "crud-service": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/clientapp",
+            "outputPath": "dist/crud-service",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "clientapp:build"
+            "browserTarget": "crud-service:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "clientapp:build:production"
+              "browserTarget": "crud-service:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "clientapp:build"
+            "browserTarget": "crud-service:build"
           }
         },
         "test": {
@@ -114,19 +114,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "clientapp:serve"
+            "devServerTarget": "crud-service:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "clientapp:serve:production"
+              "devServerTarget": "crud-service:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "clientapp",
+  "defaultProject": "crud-service",
   "cli": {
-    "analytics": "bfe23d60-1b0e-4895-b1e8-bb31c27bb4cb"
+    "analytics": "6dac903a-edee-4e75-9e23-62b9082f0878"
   }
 }

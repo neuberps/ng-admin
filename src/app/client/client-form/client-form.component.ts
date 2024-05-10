@@ -1,8 +1,9 @@
-import { Component, OnInit } from "@angular/core";
-import { ClientService } from "../service/client.service";
-import { Router, ActivatedRoute, Params } from "@angular/router";
-import { Observable } from "rxjs";
-import { Client } from "../model/client";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+
+import { Client } from '../model/client';
+import { ClientService } from '../service/client.service';
 
 @Component({
   selector: "app-form",
@@ -30,15 +31,6 @@ export class ClientFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // let Params = this.activatedRoute.params
-    // // console.log(Params.value);
-    // if(Params.value.id) {
-    //   this.id = Params.value.id;
-    //   this.service
-    //       .getById(this.id)
-    //       .subscribe( response = > this.client = response)
-    // }
-
 
     let params: Observable<Params> = this.activatedRoute.params;
     params.subscribe((urlParams) => {
@@ -53,7 +45,7 @@ export class ClientFormComponent implements OnInit {
   }
 
   returnList() {
-    this.router.navigate(["/list"]);
+    this.router.navigate(["/client-list"]);
   }
 
   onSubmit() {

@@ -13,6 +13,15 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { ClientModule } from './client/client.module';
 import { PaymentsModule } from './payments/payments.module';
 
+import { ServiceService } from './service/service/service.service';
+import { ServiceModule } from './service/service.module';
+
+import { LOCALE_ID, DEFAULT_CURRENCY_CODE } from '@angular/core';
+import ptBr from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+
+
+registerLocaleData(ptBr);
 
 
 @NgModule({
@@ -29,11 +38,15 @@ import { PaymentsModule } from './payments/payments.module';
     ClientModule,
     PaymentsModule,
     NgxPaginationModule,
-
+    ServiceModule,
 
   ],
   providers: [
-    ClientService
+    { provide: LOCALE_ID, useValue: 'pt' },
+    { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
+    ServiceService,
+    ClientService,
+
   ],
   bootstrap: [AppComponent]
 })

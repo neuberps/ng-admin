@@ -14,6 +14,8 @@ import { LoginService } from './login/services/login.service';
 import { PaymentsModule } from './payments/payments.module';
 import { ServiceService } from './service/service/service.service';
 import { ServiceModule } from './service/service.module';
+import { CategoryModule } from './category/model/category.module';
+import { CategoryService } from './category/service/category.service';
 
 import { LOCALE_ID, DEFAULT_CURRENCY_CODE } from '@angular/core';
 import ptBr from '@angular/common/locales/pt';
@@ -40,7 +42,8 @@ registerLocaleData(ptBr);
     NgxPaginationModule,
     LoginModule,
     PaymentsModule,
-    ProductModule
+    ProductModule,
+    CategoryModule
   ],
 
   providers: [
@@ -50,7 +53,8 @@ registerLocaleData(ptBr);
     ClientService,
     ProductService,
     UserService,
-    LoginService
+    LoginService,
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })

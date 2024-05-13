@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="mt-4">Serviços</h1>
+  <h2 class="mt-4">Serviços</h2>
   <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item active">{{ service.id ? 'Editar serviço' : 'Cadastrar serviço'}}</li>
   </ol>
@@ -68,7 +68,7 @@
       <div class="col-md-6">
         <div class="form-group">
           <label>Imagem: *</label>
-          <input placeholder="Descreva o nome da imagem com a sua extenção. Ex.: image1.jpeg" type="text" class="form-control" [(ngModel)]="service.image"
+          <input placeholder="Descreva o nome da imagem com a sua extenção. Ex.: image1.jpeg" type="file" class="form-control" [(ngModel)]="service.image"
             name="image" />
         </div>
       </div>
@@ -145,7 +145,6 @@
           routerLink="/service-list">Confirmar</button>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i
             class="fa fa-arrow-alt-circle-left"></i> Voltar</button>
-
       </div>
     </div>
   </div>

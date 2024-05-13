@@ -38,7 +38,7 @@ export class ServiceService {
   }
 
   findByTypeService() : Observable<Category[]> {
-    return this.httpClient.get<Category[]> ('http://localhost:9001/api/category/findByTypeService');
+    return this.httpClient.get<Category[]> ('http://localhost:9003/api/category/findByTypeService');
   }
 
   delete(service: Service): Observable<any>{

@@ -4,9 +4,9 @@ import { CategoryListComponent } from './category-list/category-list.component';
 import { CategoryFormComponent } from './category-form/category-form.component';
 
 const routes: Routes = [
-  { path: 'listCategory', component: CategoryListComponent  },
-  { path: 'formCategory', component: CategoryFormComponent },
-  { path: 'formCategory/:id', component: CategoryFormComponent }
+  { path: 'category-list', component: CategoryListComponent  },
+  { path: 'category-form', component: CategoryFormComponent },
+  { path: 'category-form/:id', component: CategoryFormComponent }
 ];
 
 @NgModule({

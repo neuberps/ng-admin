@@ -1,5 +1,6 @@
 export class Product {
   id: string;
+  image: string;
   name: string;
   description: string;
   price: number;
@@ -9,6 +10,5 @@ export class Product {
   stock: string;
   supplier: string;
   registryUser: string;
-  image: string;
   quantity: number
 }

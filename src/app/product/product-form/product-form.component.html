@@ -92,16 +92,6 @@
                     [(ngModel)]="product.registryUser" name="registryUser"/>
                 </div>
             </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                  <label>Imagem: *</label>
-                  <div class="col-ms-2">
-                  <input type="file" class="file-upload" onchange="console.log(event.target.files)">
-                </div>
-                  <!--<input type="text" class="form-control"
-                          [(ngModel)]="product.image" name="image"/> -->
-              </div>
-          </div>
           <div class="col-md-6">
             <div class="form-group">
                 <label>Desconto: *</label>
@@ -112,8 +102,8 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <button type="submit" class="btn btn-success" *ngIf="!product.id">
-                    <i class="fa fa-save"></i> Salvar
+                <button type="submit" class="btn btn-success" routerLink="/product-list" *ngIf="!product.id">
+                    <i class="fa fa-save "></i> Salvar
                 </button>
 
                 <button type="submit" class="btn btn-success" *ngIf="product.id">
@@ -130,7 +120,6 @@
             </div>
         </div>
     </form>
-
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">

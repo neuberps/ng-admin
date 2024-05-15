@@ -12,30 +12,30 @@ export class CategoryService {
   constructor( private http: HttpClient ) { }
 
   save( category: Category ) : Observable<Category> {
-    return this.http.post<Category>('http://localhost:9001/api/category/create', category);
+    return this.http.post<Category>('http://localhost:9003/api/category/create', category);
   }
 
   update( category: Category ) : Observable<any> {
-    return this.http.put<Category>(`http://localhost:9001/api/category/update/${category.id}`, category);
+    return this.http.put<Category>(`http://localhost:9003/api/category/update/${category.id}`, category);
   }
 
   findAll() : Observable<Category[]> {
-    return this.http.get<Category[]> ('http://localhost:9001/api/category/findAll');
+    return this.http.get<Category[]> ('http://localhost:9003/api/category/findAll');
   }
 
   findByProduct() : Observable<Category[]> {
-    return this.http.get<Category[]> ('http://localhost:9001/api/category/findByTypeProduct');
+    return this.http.get<Category[]> ('http://localhost:9003/api/category/findByTypeProduct');
   }
 
   findByService() : Observable<Category[]> {
-    return this.http.get<Category[]> ('http://localhost:9001/api/category/findByTypeService');
+    return this.http.get<Category[]> ('http://localhost:9003/api/category/findByTypeService');
   }
 
   getById( id: string ) : Observable<Category> {
-    return this.http.get<any> (`http://localhost:9001/api/category/search/${id}`);
+    return this.http.get<any> (`http://localhost:9003/api/category/search/${id}`);
   }
 
   deleteId( category : Category ) : Observable<any> {
-    return this.http.delete<any>(`http://localhost:9001/api/category/delete/${category.id}`);
+    return this.http.delete<any>(`http://localhost:9003/api/category/delete/${category.id}`);
   }
 }

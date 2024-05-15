@@ -89,7 +89,7 @@ export class CategoryFormComponent implements OnInit {
   }
 
   returnList() {
-    this.router.navigate(['/listCategory'])
+    this.router.navigate(['/category-list'])
   }
 
 }

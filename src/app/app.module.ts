@@ -21,6 +21,8 @@ import { registerLocaleData } from '@angular/common';
 import { ClientModule } from './client/client.module';
 import { ProductService } from './product/service/product.service';
 import { ProductModule } from './product/product.module';
+import { CategoryModule } from './category/model/category.module';
+import { CategoryService } from './category/service/category.service';
 
 registerLocaleData(ptBr);
 
@@ -40,7 +42,8 @@ registerLocaleData(ptBr);
     NgxPaginationModule,
     LoginModule,
     PaymentsModule,
-    ProductModule
+    ProductModule,
+    CategoryModule
   ],
 
   providers: [
@@ -50,7 +53,8 @@ registerLocaleData(ptBr);
     ClientService,
     ProductService,
     UserService,
-    LoginService
+    LoginService,
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })

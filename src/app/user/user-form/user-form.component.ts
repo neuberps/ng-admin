@@ -3,6 +3,7 @@ import { User } from '../model/user';
 import { UserService } from '../service/user.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Observable } from 'rxjs';
+import { LoginService } from 'src/app/login/services/login.service';
 
 @Component({
   selector: 'app-user-form',
@@ -24,9 +25,11 @@ export class UserFormComponent implements OnInit {
   constructor(
     private service: UserService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
-    ){ this.user = new User();}
-
+    private activatedRoute: ActivatedRoute,
+    private loginService: LoginService,
+    ){ this.user = new User();
+       this.user.registryUser = this.loginService.getUserSession().name;
+    }
 
   ngOnInit(): void {
     let params: Observable<Params> = this.activatedRoute.params;
@@ -41,16 +44,25 @@ export class UserFormComponent implements OnInit {
     });
   }
 
+  public getUserSession(): any {
+    return this.loginService.getUserSession();
+  }
+
   returnList() {
     this.router.navigate(["/user-list"]);
   }
 
   onSubmit() {
     if (this.id) {
-      this.service.update(this.user).subscribe(
+          if (this.user.registryUser !== this.loginService.getUserSession().name) {
+              this.user.registryUser = this.loginService.getUserSession().name;
+          }
+
+       this.service.update(this.user).subscribe(
         (response) => {
           this.success = true;
           this.errors = null;
+          //this.router.navigate(["/user-list"]);
         },
         (errorResponse) => {
           this.errors = ["Erro ao Atualizar Usuário"];
@@ -62,6 +74,7 @@ export class UserFormComponent implements OnInit {
           this.success = true;
           this.errors = null;
           this.user = response;
+          // this.router.navigate(["/user-list"]);
         },
         (errorResponse) => {
           this.success = false;

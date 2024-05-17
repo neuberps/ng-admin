@@ -40,7 +40,7 @@
         <div class="row">
           <div class="col-md-6">
               <div class="form-group">
-                  <label>Nome Usuário: *</label>
+                  <label>Usuário: *</label>
                   <input type="text" class="form-control"
                             [(ngModel)]="user.username" name="username"/>
               </div>
@@ -64,9 +64,9 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Usuário: *</label>
+                    <label>Responsável: </label>
                     <input type="text" class="form-control"
-                           [(ngModel)]="user.registryUser" name="registryUser"/>
+                           [(ngModel)]="user.registryUser" name="registryUser" value="{{ getUserSession().name }}" readonly/>
                 </div>
             </div>
         </div>

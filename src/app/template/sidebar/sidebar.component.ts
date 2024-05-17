@@ -9,7 +9,7 @@ import { LoginService } from 'src/app/login/services/login.service';
 })
 export class SidebarComponent implements OnInit {
 
-
+  
   constructor(private router: Router, private loginService: LoginService) {}
 
   ngOnInit(): void {

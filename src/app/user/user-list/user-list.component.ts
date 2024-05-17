@@ -31,7 +31,6 @@ export class UserListComponent implements OnInit {
       .subscribe( response => this.users = response);
   }
 
-
   createUser() {
     this.router.navigate(['/user-form'])
   }

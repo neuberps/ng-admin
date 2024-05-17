@@ -11,14 +11,12 @@ import { Router } from '@angular/router';
 })
 export class LoginService {
 
-
   apiUrl: string = "http://localhost:9008/auth";
 
   // Chave estática da sessão
   static SESSION_USER_KEY = 'session_user';
 
   constructor( private httpClient: HttpClient, private router: Router) { }
-
 
   // Método para limpar os dados da sessão
   clean(): void {

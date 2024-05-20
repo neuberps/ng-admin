@@ -48,7 +48,7 @@
           <div class="col-md-6">
               <div class="form-group">
                   <label>Senha: *</label>
-                  <input type="password" class="form-control"
+                  <input type="password" class="form-control" placeholder="Digite a senha" required maxlength="6"
                             [(ngModel)]="user.password" name="password"/>
               </div>
           </div>
@@ -58,7 +58,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Email: *</label>
-                    <input type="text" class="form-control"
+                    <input type="text" class="form-control" placeholder="Ex: user@gmail.com" required email
                             [(ngModel)]="user.email" name="email"/>
                 </div>
             </div>

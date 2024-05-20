@@ -3,6 +3,8 @@ import { ClientService } from "../service/client.service";
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import { Observable } from "rxjs";
 import { Client } from "../model/client";
+import { LoginService } from "src/app/login/services/login.service";
+
 
 @Component({
   selector: "app-form",
@@ -24,9 +26,11 @@ export class ClientFormComponent implements OnInit {
   constructor(
     private service: ClientService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private loginService: LoginService
   ) {
     this.client = new Client();
+    this.client.registryUser = this.loginService.getUserSession().name;
   }
 
   ngOnInit(): void {
@@ -43,12 +47,21 @@ export class ClientFormComponent implements OnInit {
     });
   }
 
+  public getUserSession(): any {
+    return this.loginService.getUserSession();
+  }
+
   returnList() {
     this.router.navigate(["/client-list"]);
   }
 
   onSubmit() {
     if (this.id) {
+
+      if (this.client.registryUser !== this.loginService.getUserSession().name) {
+        this.client.registryUser = this.loginService.getUserSession().name;
+    }
+
       this.service.update(this.client).subscribe(
         (response) => {
           this.success = true;
